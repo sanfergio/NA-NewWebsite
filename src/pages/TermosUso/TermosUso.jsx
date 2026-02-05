@@ -7,7 +7,7 @@ import WhatsAppButton from "../../components/WhatsappButton";
 export default function TermosUso() {
     useEffect(() => {
         try {
-            document.title = "Brasmérica | Termos de Uso";
+            document.title = "New Andrew's | Termos de Uso";
         } catch (e) {
             // ambiente sem DOM: ignora
         }

@@ -2,47 +2,31 @@
 import React, { useState, useEffect } from "react";
 import styles from "./ProductCard.module.css";
 import { FaShippingFast } from "react-icons/fa";
-import { SiPix } from "react-icons/si";
 import { FaCartShopping } from "react-icons/fa6";
 import SupabaseClient from "../KEYS/App.jsx";
 import AddCart from "../Alerts/AddCart";
 import CartSidebar from "../CartSideBar/CartSideBar.jsx";
 
 const supabase = SupabaseClient;
-
 const STORAGE_KEY = "cart_v1";
 
 export function currencyBRL(value) {
   return value == null
     ? "-"
     : Number(value).toLocaleString("pt-BR", {
-      style: "currency",
-      currency: "BRL",
-    });
+        style: "currency",
+        currency: "BRL",
+      });
 }
 
-/**
- * 🧩 Componente com filtros dinâmicos
- *
- * @param {object} props
- * @param {string=} props.category - Categoria (ex: "Pneus")
- * @param {string=} props.subcategory - Subcategoria (ex: "Pneus para motos")
- * @param {number=} props.limit - Limite de produtos retornados
- * @param {string=} props.orderBy - Campo de ordenação (ex: "unitssold", "reviewcount", "price")
- * @param {"asc"|"desc"=} props.orderDirection - Direção da ordenação
- * @param {boolean=} props.onlyAvailable - Se true, filtra apenas disponíveis (disponible = 0) (default: true)
- * @param {Array<{min:number,max:number}>=} props.priceRanges - Array de faixas de preço para filtrar (client-side)
- * @param {Array<string>=} props.company_name - Array de nomes de marca para filtrar (campo no BD: company_name)
- */
 function ProductCard({
   category,
-  subcategory,
   limit,
   orderBy,
   orderDirection = "desc",
   onlyAvailable = true,
   priceRanges = [],
-  company_name = [],
+  brand = [],
 }) {
   const [products, setProducts] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -51,25 +35,20 @@ function ProductCard({
   useEffect(() => {
     async function fetchProducts() {
       try {
-        let query = supabase.from("DBproducts").select("*");
+        let query = supabase.from("db_na_products").select("*");
 
-        // 🔸 Sempre mostrar apenas produtos disponíveis (disponible = 0)
+        // Disponíveis = 1
         if (onlyAvailable) {
-          query = query.eq("disponible", 0);
+          query = query.eq("disponible", 1);
         }
 
-        // 🔸 Filtros opcionais
         if (category) query = query.eq("category", category);
-        if (subcategory) query = query.eq("subcategory", subcategory);
 
-        // 🔸 Filtrar por marcas (company_name) se fornecido — usa o campo exatamente como no BD
-        if (Array.isArray(company_name) && company_name.length > 0) {
-          // garante que todos os itens são strings
-          const brands = company_name.map((b) => String(b));
-          query = query.in("company_name", brands);
+        // Filtro por marca
+        if (Array.isArray(brand) && brand.length > 0) {
+          query = query.in("brand", brand.map(String));
         }
 
-        // 🔸 Ordenação (mais vendidos, melhor avaliados, etc.)
         if (orderBy) {
           query = query.order(orderBy, {
             ascending: orderDirection === "asc",
@@ -78,128 +57,96 @@ function ProductCard({
           query = query.order("name", { ascending: true });
         }
 
-        // 🔸 Limite de resultados
         if (limit) query = query.limit(limit);
 
         const { data, error } = await query;
-
         if (error) {
           console.error("Erro Supabase:", error);
           return;
         }
 
-        const mapped = (data || []).map((p) => ({
-          id: p.id,
-          name: p.name,
-          price: Number(p.price),
-          oldPrice: p.oldprice ? Number(p.oldprice) : null,
-          images: [p.img1, p.img2, p.img3].filter(Boolean),
-          rating: p.rating ? Number(p.rating) : 0,
-          category: p.category,
-          subcategory: p.subcategory,
-          available: p.disponible === 0 || p.disponible === "0",
-          url: p.url,
-          unitsSold: p.unitssold ? Number(p.unitssold) : 0,
-          reviewCount: p.reviewcount ? Number(p.reviewcount) : 0,
-          stockQty: p.stockqty ? Number(p.stockqty) : 0,
-          tags: p.tags || "",
-          shortDesc: p.shortdesc || "",
-          longDesc: p.longdesc || "",
-          freeShipping:
-            p.freeshipping === true ||
-            p.freeshipping === "true" ||
-            p.freeshipping === 1,
-          discountPix: p.discountpix || "PIX",
-          title: p.name,
-          image: p.img1,
-          buyNowUrl: p.url || "#",
-        }));
+        let mapped = (data || []).map((p) => {
+          const price = Number(p.varejo_value) || 0;
 
-        // Se houver priceRanges, filtra client-side: produto entra se estiver em qualquer faixa selecionada
-        let final = mapped;
-        if (Array.isArray(priceRanges) && priceRanges.length > 0) {
-          final = mapped.filter((prod) =>
+          return {
+            id: p.id,
+            title: p.name,
+            name: p.name,
+            price,
+            oldPrice: price * 2,
+            images: [p.mockup_img, p.flyer_img].filter(Boolean),
+            image:
+              p.mockup_img ||
+              p.flyer_img ||
+              "https://via.placeholder.com/300x300?text=Produto",
+            category: p.category,
+            subcategory: "",
+            available: p.disponible === 1,
+            rating: 5, // mock
+            unitsSold: 0,
+            reviewCount: 0,
+            stockQty: 999,
+            shortDesc: p.short_description || "",
+            longDesc: p.description || "",
+            brand: p.brand,
+            freeShipping: true,
+            buyNowUrl: "#",
+          };
+        });
+
+        // Filtro de preço client-side
+        if (priceRanges.length > 0) {
+          mapped = mapped.filter((prod) =>
             priceRanges.some((r) => {
-              const price = Number(prod.price);
-              // caso r.min ou r.max sejam null/undefined, tratar como aberto
-              const minOk = r.min == null ? true : price >= r.min;
-              const maxOk = r.max == null ? true : price <= r.max;
+              const minOk = r.min == null || prod.price >= r.min;
+              const maxOk = r.max == null || prod.price <= r.max;
               return minOk && maxOk;
             })
           );
         }
 
-        setProducts(final);
+        setProducts(mapped);
       } catch (err) {
-        console.error("Erro ao buscar produtos:", err);
+        console.error("Erro geral:", err);
       }
     }
 
     fetchProducts();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     category,
-    subcategory,
     limit,
     orderBy,
     orderDirection,
     onlyAvailable,
     JSON.stringify(priceRanges),
-    JSON.stringify(company_name),
+    JSON.stringify(brand),
   ]);
 
-  // --- Função para adicionar item ao cart salvo no localStorage ---
   const handleAddToCart = (product) => {
-    try {
-      // Mostra a notificação
-      setShowAddCart(true);
+    setShowAddCart(true);
 
-      const raw = localStorage.getItem(STORAGE_KEY);
-      const cart = raw ? JSON.parse(raw) : [];
+    const raw = localStorage.getItem(STORAGE_KEY);
+    const cart = raw ? JSON.parse(raw) : [];
 
-      // Procura item pelo id
-      const idx = cart.findIndex((it) => String(it.id) === String(product.id));
+    const idx = cart.findIndex((it) => String(it.id) === String(product.id));
 
-      if (idx > -1) {
-        // incrementa quantidade
-        cart[idx].productQuantity = Number(cart[idx].productQuantity || 0) + 1;
-      } else {
-        // adiciona novo item com a estrutura esperada pelo carrinho
-        const newItem = {
-          id: product.id,
-          productName: product.title || product.name || "",
-          productPrice: product.price != null ? product.price : 0,
-          productQuantity: 1,
-          productImage: product.image || (product.images && product.images[0]) || "",
-        };
-        cart.push(newItem);
-      }
-
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
-
-      // Abre o carrinho automaticamente
-      setIsCartOpen(true);
-
-      // Emite evento customizado para permitir que componentes na mesma aba possam reagir sem reload.
-      try {
-        window.dispatchEvent(new CustomEvent("cartUpdated", { detail: cart }));
-      } catch (e) {
-        // fallback: dispatch plain Event and rely on reading localStorage
-        try {
-          window.dispatchEvent(new Event("cartUpdated"));
-        } catch (er) {
-          // ignore
-        }
-      }
-
-      // Esconde a notificação após um tempo
-      setTimeout(() => {
-        setShowAddCart(false);
-      }, 3000);
-
-    } catch (e) {
-      console.error("Erro ao adicionar item ao carrinho:", e);
+    if (idx > -1) {
+      cart[idx].productQuantity += 1;
+    } else {
+      cart.push({
+        id: product.id,
+        productName: product.title,
+        productPrice: product.price,
+        productQuantity: 1,
+        productImage: product.image,
+      });
     }
+
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
+    setIsCartOpen(true);
+    window.dispatchEvent(new Event("cartUpdated"));
+
+    setTimeout(() => setShowAddCart(false), 3000);
   };
 
   return (

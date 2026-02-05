@@ -8,7 +8,7 @@ import Footer from "../../components/Footer/Footer";
 export default function FormasPagamento() {
   useEffect(() => {
     try {
-      document.title = "Brasmérica | Formas de Pagamento";
+      document.title = "New Andrew's | Formas de Pagamento";
     } catch (e) {
       // ambiente sem DOM: ignora
     }

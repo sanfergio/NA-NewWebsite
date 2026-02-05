@@ -296,7 +296,7 @@ export default function ProductPage() {
     const newTitle = (product && product.name) ? product.name : (fallbackTitle || defaultSiteTitle);
 
     try {
-      document.title = "Brasmérica | " + newTitle;
+      document.title = "New Andrew's | " + newTitle;
 
       // Atualiza / cria meta og:title para SEO compartilhamento quando possível (client-side)
       let og = document.querySelector('meta[property="og:title"]');

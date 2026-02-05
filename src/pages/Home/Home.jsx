@@ -37,7 +37,7 @@ function Home() {
                     </h1>
 
                     <h2 className={styles.sloganSubtitle}>
-                      <strong>CONHEÇA OS PRODUTOS NEW ANDREW'S:</strong>
+                        <strong>CONHEÇA OS PRODUTOS NEW ANDREW'S:</strong>
                         <br />
                         <br />
                         Suplementos para a vida!
@@ -50,14 +50,18 @@ function Home() {
                         MAIS VENDIDOS
                     </h3>
                     <div className={styles.productCards}>
-                        <ProductCard limit={8} orderBy="unitssold" orderDirection="desc" />
+                        <ProductCard
+                            limit={8}
+                            orderBy="varejo_value"
+                            orderDirection="desc"
+                        />
                     </div>
                 </section>
 
                 {/* Marca de confiança */}
                 <section aria-labelledby="marca-confianca-titulo">
                     <h3 id="marca-confianca-titulo" style={{ color: '#000000', fontSize: '25px', textAlign: 'center' }}>
-                        SUA MARCA DE CONFIANÇA
+                        QUAL O SEU OBJETIVO?
                     </h3>
                     <div className={styles.trustSection}>
                         <a href="/marca/Honda" className={styles.trustItem}>

@@ -8,7 +8,7 @@ import WhatsAppButton from "../../components/WhatsappButton";
 export default function QuemSomos() {
   useEffect(() => {
     try {
-      document.title = "Brasmérica | Quem somos";
+      document.title = "New Andrew's | Quem somos";
     } catch (e) {
       // ambiente sem DOM: ignora
     }

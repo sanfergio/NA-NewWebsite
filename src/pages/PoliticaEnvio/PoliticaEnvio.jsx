@@ -9,7 +9,7 @@ import Footer from "../../components/Footer/Footer";
 export default function PoliticaEnvio() {
     useEffect(() => {
         try {
-            document.title = "Brasmérica | Política de Envio e Entrega";
+            document.title = "New Andrew's | Política de Envio e Entrega";
         } catch (e) {
             // ambiente sem DOM: ignora
         }

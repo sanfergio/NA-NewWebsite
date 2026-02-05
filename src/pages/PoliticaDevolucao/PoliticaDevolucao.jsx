@@ -8,7 +8,7 @@ import Footer from "../../components/Footer/Footer";
 export default function PoliticaDevolucao() {
   useEffect(() => {
     try {
-      document.title = "Brasmérica | Política de Devolução";
+      document.title = "New Andrew's | Política de Devolução";
     } catch (e) {
       // ambiente sem DOM: ignora
     }

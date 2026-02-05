@@ -7,7 +7,7 @@ import WhatsAppButton from "../../components/WhatsappButton";
 export default function NossaLoja() {
   useEffect(() => {
     try {
-      document.title = "Brasmérica | Nossa Loja";
+      document.title = "New Andrew's | Nossa Loja";
     } catch (e) {
       // ambiente sem DOM: ignora
     }

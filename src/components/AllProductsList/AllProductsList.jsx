@@ -11,9 +11,9 @@ function AllProductsList() {
   useEffect(() => {
     const fetchDisponiveis = async () => {
       const { data, error } = await supabase
-        .from("DBproducts")
-        .select("name, disponible, url")
-        .eq("disponible", 0);
+        .from("db_na_products")
+        .select("name, disponible")
+        .eq("disponible", 1);
 
       if (error) {
         console.error("Erro ao buscar dispositivos disponíveis:", error);
@@ -39,7 +39,6 @@ function AllProductsList() {
         {produtos.map((produto, index) => (
           <li key={index} className={styles.item}>
             <a
-              href={produto.url || "#"}
               target="_blank"
               rel="noopener noreferrer"
               className={styles.link}

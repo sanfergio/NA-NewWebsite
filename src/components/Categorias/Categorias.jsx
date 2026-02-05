@@ -2,49 +2,49 @@ import styles from "./Categorias.module.css";
 
 const categorias = [
     {
-        href: "/categorias?categoria=termogenicos/",
+        href: "/categorias?categoria=thermogenics",
         icon: "fa-fire",
         title: "Termogênicos",
         img: "https://newandrews.com.br/image-andrews/cards/Termogenicos.png",
     },
     {
-        href: "/categorias?categoria=aminoacidos/",
+        href: "/categorias?categoria=aminoacidos",
         icon: "fa-flask",
         title: "Aminoácidos",
         img: "https://newandrews.com.br/image-andrews/cards/Aminoacidos.png",
     },
     {
-        href: "/categorias?categoria=xaropes/",
+        href: "/categorias?categoria=xaropes",
         icon: "fa-coffee",
         title: "Xaropes <br /> e Chás",
         img: "https://newandrews.com.br/image-andrews/cards/Xaropes.png",
     },
     {
-        href: "/categorias?categoria=produtos-masculinos/",
+        href: "/categorias?categoria=masculine",
         icon: "fa-mars-stroke",
         title: "Produtos <br /> Masculinos",
         img: "https://newandrews.com.br/image-andrews/cards/Masculinos.png",
     },
     {
-        href: "/categorias?categoria=vitaminas/",
+        href: "/categorias?categoria=vitamins",
         icon: "fa-capsules",
         title: "Vitaminas",
         img: "https://newandrews.com.br/image-andrews/cards/Vitaminas.png",
     },
     {
-        href: "/categorias?categoria=pre-treinos/",
+        href: "/categorias?categoria=pre-workout",
         icon: "fa-bolt",
         title: "Pré-Treinos",
         img: "https://newandrews.com.br/image-andrews/cards/Pre-Treinos.png",
     },
     {
-        href: "/categorias?categoria=oleos/",
+        href: "/categorias?categoria=oils",
         icon: "fa-tint",
         title: "Óleos",
         img: "https://newandrews.com.br/image-andrews/cards/Oleos.png",
     },
     {
-        href: "/categorias?categoria=produtos-femininos/",
+        href: "/categorias?categoria=female",
         icon: "fa-venus",
         title: "Produtos <br /> Femininos",
         img: "https://newandrews.com.br/image-andrews/cards/Femininos.png",

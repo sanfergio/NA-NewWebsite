@@ -25,7 +25,7 @@ export default function Login() {
 
   useEffect(() => {
     try {
-      document.title = "Brasmérica | Login";
+      document.title = "New Andrew's | Login";
     } catch (e) {
       // ambiente sem DOM — ignora
     }

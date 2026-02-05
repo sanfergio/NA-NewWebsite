@@ -8,7 +8,7 @@ import WhatsAppButton from "../../components/WhatsappButton"
 export default function PoliticaPrivacidade() {
     useEffect(() => {
         try {
-            document.title = "Brasmérica | Política de Privacidade";
+            document.title = "New Andrew's | Política de Privacidade";
         } catch (e) {
             // ambiente sem DOM: ignora
         }
