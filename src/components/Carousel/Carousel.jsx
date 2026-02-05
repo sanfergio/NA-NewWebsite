@@ -114,11 +114,11 @@ const carouselCss = `
 // ==========================
 
 const carouselImagesDesktop = [
-    { src: "https://github.com/machadocalebe/repo-sanfer-imagens/blob/main/brasMerica/imagens/A%20LOJA%20MAIS%20COMPLETA%20DE%20PE%C3%87AS%20PARA%20SUA%20MOTO.png?raw=true", href: "#", alt: "" },
+    { src: "https://newandrews.com.br/image-andrews/banner_kit_homem.jpg", href: "#", alt: "" },
 ];
 
 const carouselImagesMobile = [
-    { src: "https://github.com/machadocalebe/repo-sanfer-imagens/blob/main/brasMerica/imagens/Moto%20em%20Paisagem%20Des%C3%A9rtica%20ao%20P%C3%B4r%20do%20Sol.png?raw=true", href: "#", alt: "" },
+    { src: "https://www.newandrews.com.br/image-andrews/kit-homem.jpg", href: "#", alt: "" },
 ];
 
 // ==========================

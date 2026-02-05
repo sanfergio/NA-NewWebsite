@@ -16,24 +16,24 @@ import {
 
 const navItems = [
     {
-        name: "Acessórios",
-        iconUrl: 'https://media-public.canva.com/iw3Rg/MAB1V5iw3Rg/2/t.png',
-        href: '/categorias?categoria=acessorios'
+        name: "Categorias",
+        iconUrl: 'https://cdn-icons-png.flaticon.com/512/5665/5665189.png',
+        href: '/categorias'
     },
     {
-        name: "Pneus",
-        iconUrl: 'https://media-public.canva.com/xteHI/MAEqsFxteHI/1/t.png',
-        href: '/categorias?categoria=pneus'
+        name: "Objetivos",
+        iconUrl: 'https://cdn-icons-png.flaticon.com/512/30/30237.png',
+        href: '/objetivos'
     },
     {
-        name: "Peças",
-        iconUrl: 'https://media-public.canva.com/71OSg/MAFcf371OSg/1/t.png',
-        href: '/categorias?categoria=pecas'
+        name: "Promoções",
+        iconUrl: 'https://cdn-icons-png.flaticon.com/512/879/879757.png',
+        href: '/ofertas'
     },
     {
-        name: "Óleos",
-        iconUrl: 'https://media-public.canva.com/kEKFs/MAFcf6kEKFs/1/t.png',
-        href: '/categorias?categoria=oleos'
+        name: "Atacados",
+        iconUrl: 'https://cdn-icons-png.flaticon.com/512/2581/2581576.png',
+        href: '/atacados'
     }
     // Adicione ou edite itens aqui para atualizar o NavBar automaticamente
 ];

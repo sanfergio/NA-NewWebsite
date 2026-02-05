@@ -29,12 +29,12 @@
 }
 
 .inputSearch input::placeholder {
-  color: #b22234;
+  color: #000000;
   text-align: center;
 }
 
 .searchIcon {
-  color: #b22234;
+  color: #000000;
   font-size: 1.2rem;
   cursor: pointer;
 }
@@ -101,7 +101,7 @@
 }
 
 .precoProduto {
-  color: #b22234;
+  color: #000000;
   font-weight: 600;
   font-size: 0.85rem;
   margin-top: 3px;

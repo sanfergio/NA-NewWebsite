@@ -1,13 +1,13 @@
-# 🏍️ BrasMerica Website
+# 🏍️ New Andrew's Website
 
-**🌐 Website URL:** [https://brasmerica.com.br/](https://brasmerica.com.br/)  
-**📦 Repository:** [https://github.com/sanfergio/BrasMerica-Website](https://github.com/sanfergio/BrasMerica-Website)
+**🌐 Website URL:** [https://www.newandrews.com.br/](https://www.newandrews.com.br/)  
+**📦 Repository:** [https://github.com/sanfergio/NA-NewWebsite/tree/master](https://github.com/sanfergio/NA-NewWebsite/tree/master)
 
 ---
 
 ## 🧩 Overview
 
-**BrasMerica** is a modern **e-commerce platform** focused on selling **motorcycle parts and accessories**, built with **React + Vite** to ensure speed, scalability, and a smooth user experience.
+**New Andrew's** is a modern **e-commerce platform** focused on selling **motorcycle parts and accessories**, built with **React + Vite** to ensure speed, scalability, and a smooth user experience.
 
 The project follows **Agile methodologies (Scrum)** and is structured around **sprints**, **features**, and **component-based development**, promoting efficiency, collaboration, and clean code practices.
 
@@ -26,7 +26,7 @@ The project follows **Agile methodologies (Scrum)** and is structured around **s
 
 ## ⚙️ Development Methodology
 
-The **BrasMerica** team applies **Agile Scrum** principles to maintain flexibility, collaboration, and continuous delivery.  
+The **New Andrew's** team applies **Agile Scrum** principles to maintain flexibility, collaboration, and continuous delivery.  
 Each sprint includes:
 
 - 📅 Sprint planning & backlog organization  
@@ -68,6 +68,5 @@ Ensure you have **Node.js** and **npm** installed.
 
 ### 📦 Installation
 ```bash
-git clone https://github.com/sanfergio/BrasMerica-Website.git
-cd BrasMerica-Website
+git clone https://github.com/sanfergio/NA-NewWebsite/tree/master
 npm install

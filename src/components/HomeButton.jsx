@@ -9,7 +9,7 @@ const HomeButton = () => {
     bottom: '50px',
     right: '20px',
     zIndex: 999,
-    background: '#b22234',
+    background: '#000000',
     border: 'none',
     borderRadius: '50%',
     width: '56px',

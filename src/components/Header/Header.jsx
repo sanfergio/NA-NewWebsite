@@ -56,7 +56,7 @@ function Header() {
 
             <a href="../">
               <img
-                src="https://github.com/machadocalebe/repo-sanfer-imagens/blob/main/brasMerica/imagens/logo-sem-fundo-border.png?raw=true"
+                src="https://newandrews.com.br/image-andrews/logo_five.png"
                 alt="Logo Brasmerica"
               />
             </a>

@@ -31,7 +31,7 @@
 .politicaIcon {
   width: 3.5rem;
   height: 3.5rem;
-  color: #b22234;
+  color: #000000;
   flex-shrink: 0;
   transition: transform 0.4s ease;
 }
@@ -43,7 +43,7 @@
 .politicaTitle {
   font-size: 2rem;
   font-weight: 700;
-  color: #b22234;
+  color: #000000;
   position: relative;
   letter-spacing: -0.5px;
 }
@@ -55,7 +55,7 @@
   left: 0;
   width: 60px;
   height: 3px;
-  background-color: #b22234;
+  background-color: #000000;
   border-radius: 3px;
   opacity: 0.8;
 }

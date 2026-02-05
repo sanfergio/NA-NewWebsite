@@ -35,7 +35,7 @@
 .shippingIcon {
   width: 3rem;
   height: 3rem;
-  color: #b22234;
+  color: #000000;
   transition: transform 0.4s ease;
 }
 
@@ -46,7 +46,7 @@
 .shippingTitle {
   font-size: 2rem;
   font-weight: 700;
-  color: #b22234;
+  color: #000000;
   letter-spacing: 0.5px;
   position: relative;
 }
@@ -56,7 +56,7 @@
   display: block;
   width: 2rem; 
   height: 2px;
-  background-color: #b22234;
+  background-color: #000000;
   margin-top: 0.3rem; 
   border-radius: 2px;
 }

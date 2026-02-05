@@ -42,7 +42,7 @@
 .pagamentoIcon {
   width: 3rem;
   height: 3rem;
-  color: #b22234;
+  color: #000000;
   animation: girar 3s ease-in-out infinite;
 }
 
@@ -58,7 +58,7 @@
 .pagamentoTitle {
   font-size: 2rem;
   font-weight: 700;
-  color: #b22234;
+  color: #000000;
 }
 
 .pagamentoHeader::after {
@@ -68,7 +68,7 @@
   left: 0;
   width: 80px;
   height: 4px;
-  background-color: #b22234;
+  background-color: #000000;
   border-radius: 2px;
   opacity: 0.9;
 }

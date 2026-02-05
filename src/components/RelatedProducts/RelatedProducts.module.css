@@ -98,7 +98,7 @@
 
 .arrowLeft:hover,
 .arrowRight:hover {
-  background-color: #b22234;
+  background-color: #000000;
   color: white;
   transform: translateY(-50%) scale(1.1);
   border: none;

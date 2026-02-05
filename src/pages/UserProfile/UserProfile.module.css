@@ -270,11 +270,11 @@
 
 .menuItem:hover {
   background-color: #fef2f2;
-  color: #b22234;
+  color: #000000;
 }
 
 .menuItem.active {
-  background-color: #b22234;
+  background-color: #000000;
   color: white;
   box-shadow: 0 2px 4px rgba(178, 34, 52, 0.3);
 }
@@ -304,7 +304,7 @@
 .title {
   font-size: 1.75rem;
   font-weight: 600;
-  color: #b22234;
+  color: #000000;
   margin-bottom: 2rem;
 }
 
@@ -329,7 +329,7 @@
 .label {
   font-size: 0.875rem;
   font-weight: 500;
-  color: #b22234;
+  color: #000000;
 }
 
 .input {
@@ -338,18 +338,18 @@
   border-radius: 8px;
   font-size: 1rem;
   background-color: #f5f5f5;
-  color: #b22234;
+  color: #000000;
   transition: all 0.2s;
 }
 
 .input:focus {
   outline: none;
-  border-color: #b22234;
+  border-color: #000000;
   background-color: white;
 }
 
 .input::placeholder {
-  color: #b22234;
+  color: #000000;
 }
 
 .saveButton {
@@ -400,7 +400,7 @@
 }
 
 .orderCard.on-the-way {
-  border-left: 5px solid #0057a0;
+  border-left: 5px solid #2baf5e;
 }
 
 .orderCard.delivered {
@@ -408,7 +408,7 @@
 }
 
 .orderCard.canceled {
-  border-left: 5px solid #b22234;
+  border-left: 5px solid #000000;
 }
 
 .orderCard.refunded {
@@ -537,7 +537,7 @@
 
 .totalValue {
   font-weight: 700;
-  color: #b22234;
+  color: #000000;
   font-size: 1.25rem;
 }
 
@@ -564,8 +564,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #b22234;
-  border: 3px solid #b22234;
+  color: #000000;
+  border: 3px solid #000000;
 }
 
 .userInfo {
@@ -590,7 +590,7 @@
   align-items: center;
   gap: 0.75rem;
   padding: 1rem 2.5rem;
-  background-color: #b22234;
+  background-color: #000000;
   color: white;
   border: none;
   border-radius: 8px;
@@ -653,7 +653,7 @@
 }
 
 .modalButtonYes {
-  background-color: #b22234;
+  background-color: #000000;
   color: white;
 }
 

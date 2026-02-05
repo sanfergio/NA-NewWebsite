@@ -37,7 +37,7 @@
 
 /* Frete grátis */
 .freeShipping {
-  background-color: #b22234;
+  background-color: #000000;
   color: white;
   padding: 0.5rem;
   font-weight: bold;
@@ -74,7 +74,7 @@
 }
 
 .productPrice {
-  color: #d50000;
+  color: #179c4a;
   font-weight: bold;
   font-size: 1.3rem;
 }
@@ -117,24 +117,26 @@
 }
 
 .btnCart {
-  background-color: #456f93;
+  background-color: #000000;
 }
 
 .btnBuy {
-  background-color: #0057a0;
+  background-color: #2baf5e;
 }
 
 /* Hover mais clean e profissional */
 .btnCart:hover {
-  background-color: #3a5c7e;
+  background-color: #ffffff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transform: translateY(-2px);
+  color: #000000;
 }
 
 .btnBuy:hover {
-  background-color: #004880;
+  background-color: #07FD64;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transform: translateY(-2px);
+  color: #ffffff;
 }
 
 /* 🔁 --- RESPONSIVIDADE --- 🔁 */
@@ -163,7 +165,7 @@
     width: 45%;
     display: flex;
     flex-direction: column;
-    justify-content:center;
+    justify-content: center;
     transition: transform 0.2s ease;
     box-sizing: border-box;
     height: auto;
@@ -174,7 +176,7 @@
   }
 
   .freeShipping {
-    background-color: #b22234;
+    background-color: #000000;
     color: white;
     padding: 0.5rem;
     font-weight: bold;
@@ -213,7 +215,7 @@
   }
 
   .productPrice {
-    color: #d50000;
+    color: #179c4a;
     font-weight: bold;
     font-size: 1.3rem;
     width: 100%;
@@ -261,22 +263,11 @@
   }
 
   .btnCart {
-    background-color: #456f93;
+    background-color: #000000;
   }
 
   .btnBuy {
-    background-color: #0057a0;
+    background-color: #2baf5e;
   }
 
-  .btnCart:hover {
-    background-color: #3a5c7e;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    transform: translateY(-2px);
-  }
-
-  .btnBuy:hover {
-    background-color: #004880;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    transform: translateY(-2px);
-  }
 }

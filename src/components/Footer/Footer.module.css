@@ -4,7 +4,7 @@
 }
 
 .newsletter {
-  background-color: #b22234;
+  background-color: #000000;
   color: white;
   display: flex;
   align-items: center;
@@ -45,7 +45,7 @@
 }
 
 .newsletterInput button {
-  background: #b22234;
+  background: #000000;
   color: white;
   border: none;
   padding: 0.55rem 0.7rem;
@@ -73,7 +73,7 @@
 }
 
 .footerHeading {
-  color: #b22234;
+  color: #000000;
   font-weight: bold;
   font-size: 1.125rem;
   margin-bottom: 1rem;
@@ -88,7 +88,7 @@
 }
 
 .footerLinks a:hover {
-  color: #b22234;
+  color: #000000;
 }
 
 .footerContact p {
@@ -116,8 +116,8 @@
 }
 
 .footerIcons a:hover {
-  border-color: #b22234;
-  color: #b22234;
+  border-color: #000000;
+  color: #000000;
 }
 
 .footerPayments {
@@ -186,7 +186,7 @@
 }
 
 .socialInline a:hover {
-  color: #b22234;
+  color: #000000;
 }
 
 .followRight .address {
@@ -216,7 +216,7 @@
   }
 
   .newsletter {
-    background-color: #b22234;
+    background-color: #000000;
     color: white;
     display: flex;
     align-items: center;

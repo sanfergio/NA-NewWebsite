@@ -32,29 +32,31 @@ function Home() {
                 {/* Seção da marca */}
                 <section className={styles.brandSection} aria-label="Apresentação da marca BrasMérica">
                     <h1 className={styles.brandTitle} title="BrasMérica Moto Peças">
-                        <span className={styles.brandPartGreen}>BRAS</span>
-                        <span className={styles.brandPartGradient}>MÉRICA</span>
-                        <FaMotorcycle aria-hidden="true" />
+                        <img src="https://newandrews.com.br/image-andrews/logo2_icon.png" alt="" />
+                        <span className={styles.brandPartGreen}>NEW<span className={styles.brandPartGradient}>ANDREW'S</span></span>
                     </h1>
 
                     <h2 className={styles.sloganSubtitle}>
-                        O maior estoque atacadista, agora na sua garagem.
+                      <strong>CONHEÇA OS PRODUTOS NEW ANDREW'S:</strong>
+                        <br />
+                        <br />
+                        Suplementos para a vida!
                     </h2>
                 </section>
 
-                {/* Novidades */}
-                <section aria-labelledby="novidades-titulo">
-                    <h3 id="novidades-titulo" style={{ color: '#b22234', fontSize: '25px' }}>
-                        NOSSAS NOVIDADES
+                {/* Mais vendidos */}
+                <section aria-labelledby="mais-vendidos-titulo">
+                    <h3 id="mais-vendidos-titulo" style={{ color: '#000000', fontSize: '25px' }}>
+                        MAIS VENDIDOS
                     </h3>
                     <div className={styles.productCards}>
-                        <ProductCard orderBy="id" limit={8} orderDirection="desc" />
+                        <ProductCard limit={8} orderBy="unitssold" orderDirection="desc" />
                     </div>
                 </section>
 
                 {/* Marca de confiança */}
                 <section aria-labelledby="marca-confianca-titulo">
-                    <h3 id="marca-confianca-titulo" style={{ color: '#b22234', fontSize: '25px', textAlign: 'center' }}>
+                    <h3 id="marca-confianca-titulo" style={{ color: '#000000', fontSize: '25px', textAlign: 'center' }}>
                         SUA MARCA DE CONFIANÇA
                     </h3>
                     <div className={styles.trustSection}>
@@ -94,7 +96,7 @@ function Home() {
 
                 {/* Categorias */}
                 <section aria-labelledby="categorias-titulo">
-                    <h3 id="categorias-titulo" style={{ color: '#b22234', fontSize: '25px', textAlign: 'center' }}>
+                    <h3 id="categorias-titulo" style={{ color: '#000000', fontSize: '25px', textAlign: 'center' }}>
                         CATEGORIAS DISPONÍVEIS
                     </h3>
                     <div className="categories-section">
@@ -102,15 +104,17 @@ function Home() {
                     </div>
                 </section>
 
-                {/* Mais vendidos */}
-                <section aria-labelledby="mais-vendidos-titulo">
-                    <h3 id="mais-vendidos-titulo" style={{ color: '#b22234', fontSize: '25px' }}>
-                        MAIS VENDIDOS
+
+                {/* Novidades */}
+                <section aria-labelledby="novidades-titulo">
+                    <h3 id="novidades-titulo" style={{ color: '#000000', fontSize: '25px' }}>
+                        NOSSAS NOVIDADES
                     </h3>
                     <div className={styles.productCards}>
-                        <ProductCard limit={8} orderBy="unitssold" orderDirection="desc" />
+                        <ProductCard orderBy="id" limit={8} orderDirection="desc" />
                     </div>
                 </section>
+
 
                 {/* Banners promocionais */}
                 {/* <section className={styles.bannerSection} aria-label="Banners promocionais">

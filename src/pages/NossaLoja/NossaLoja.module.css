@@ -18,7 +18,7 @@
 .storeTitle {
   font-size: 2rem;
   font-weight: 700;
-  color: #b22234;
+  color: #000000;
   text-transform: none;
   position: relative;
   margin-bottom: 1.5rem;
@@ -32,7 +32,7 @@
   transform: translateX(-50%);
   width: 60px;
   height: 3px;
-  background-color: #b22234;
+  background-color: #000000;
   border-radius: 3px;
 }
 
@@ -53,7 +53,7 @@
 .visitTitle {
   font-size: 1.875rem;
   font-weight: 700;
-  color: #0057a0;
+  color: #2baf5e;
   margin-bottom: 1.5rem;
   position: relative;
 }
@@ -66,7 +66,7 @@
   transform: translateX(-50%);
   width: 50px;
   height: 3px;
-  background-color: #0057a0;
+  background-color: #2baf5e;
   border-radius: 3px;
 }
 

@@ -5,7 +5,7 @@
 }
 
 .breadcrumb {
-  color: #b22234;
+  color: #000000;
   font-size: 13px;
   margin-bottom: 5px;
 }
@@ -65,7 +65,7 @@
 .filtroGrupo h4 {
   font-size: 15px;
   font-weight: 600;
-  color: #b22234;
+  color: #000000;
   margin-bottom: 10px;
 }
 
@@ -149,7 +149,7 @@
 
   .filtrosMobile label {
     font-weight: bold;
-    color: #b22234;
+    color: #000000;
     font-size: 15px;
     margin-right: 10px;
   }

@@ -22,7 +22,7 @@
   left: -300px;
   width: 250px;
   height: 100%;
-  background-color: #831926;
+  background-color: #179c4a;
   color: white;
   transition: 0.3s;
   z-index: 1000;
@@ -106,7 +106,7 @@
   top: 0;
   width: 4px;
   height: 100%;
-  background-color: #b22234;
+  background-color: #000000;
   transform: scaleY(0);
   transform-origin: top;
   transition: transform 0.25s ease;
@@ -161,7 +161,7 @@
 .submenu {
   margin-top: 8px;
   padding-left: 15px;
-  border-left: 2px solid #b22234;
+  border-left: 2px solid #000000;
 }
 
 .submenu li {

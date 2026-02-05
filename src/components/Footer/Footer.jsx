@@ -10,7 +10,7 @@ export default function Footer() {
 
       <div className={styles.newsletter}>
         <img
-          src="https://github.com/machadocalebe/repo-sanfer-imagens/blob/main/brasMerica/imagens/icon-logo2.png?raw=true"
+          src="https://newandrews.com.br/image-andrews/logo2_icon.png"
           alt="Logo do rodapé"
           className={styles.newsletterLogo}
         />
@@ -40,9 +40,9 @@ export default function Footer() {
           <div>
             <h6 className={styles.footerHeading}>Contato</h6>
             <div className={styles.footerContact}>
-              <p><Phone size={18} color="#b22234" /> (33) 3412-2593</p>
-              <p><Mail size={18} color="#b22234" /> gidero80@gmail.com </p>
-              <p><Clock size={18} color="#b22234" /> Segunda a Sexta-feira das 09:00 às 18:00 </p>
+              <p><Phone size={18} color="#000000" /> (33) 3412-2593</p>
+              <p><Mail size={18} color="#000000" /> gidero80@gmail.com </p>
+              <p><Clock size={18} color="#000000" /> Segunda a Sexta-feira das 09:00 às 18:00 </p>
             </div>
           </div>
 
@@ -111,7 +111,7 @@ export default function Footer() {
           </div>
           <div className={styles.followRight}>
             <p className={styles.address}>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#b22234" strokeWidth="2">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#000000" strokeWidth="2">
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                 <circle cx="12" cy="10" r="3"></circle>
               </svg>

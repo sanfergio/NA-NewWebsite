@@ -1,44 +1,81 @@
-import React from 'react';
-import styles from './Categorias.module.css';
+import styles from "./Categorias.module.css";
 
-// 1. Defina seus dados (Array de Objetos JS)
-const categoryData = [
+const categorias = [
     {
-        name: "Acessórios",
-        imageUrl: "https://github.com/machadocalebe/repo-sanfer-imagens/blob/main/brasMerica/imagens/Gemini_Generated_Image_xpckvxpckvxpckvx.png?raw=true",
-        url: '/categorias?categoria=acessorios'
+        href: "/categorias?categoria=termogenicos/",
+        icon: "fa-fire",
+        title: "Termogênicos",
+        img: "https://newandrews.com.br/image-andrews/cards/Termogenicos.png",
     },
     {
-        name: "Pneus",
-        imageUrl: "https://github.com/machadocalebe/repo-sanfer-imagens/blob/main/brasMerica/imagens/Gemini_Generated_Image_6k06q36k06q36k06.png?raw=true",
-        url: '/categorias?categoria=pneus'
+        href: "/categorias?categoria=aminoacidos/",
+        icon: "fa-flask",
+        title: "Aminoácidos",
+        img: "https://newandrews.com.br/image-andrews/cards/Aminoacidos.png",
     },
     {
-        name: "Peças",
-        imageUrl: "https://github.com/machadocalebe/repo-sanfer-imagens/blob/main/brasMerica/imagens/Gemini_Generated_Image_gdwyv9gdwyv9gdwy.png?raw=true",
-        url: '/categorias?categoria=pecas'
+        href: "/categorias?categoria=xaropes/",
+        icon: "fa-coffee",
+        title: "Xaropes <br /> e Chás",
+        img: "https://newandrews.com.br/image-andrews/cards/Xaropes.png",
     },
     {
-        name: "Óleos",
-        imageUrl: "https://github.com/machadocalebe/repo-sanfer-imagens/blob/main/brasMerica/imagens/Gemini_Generated_Image_66bu5366bu5366bu.png?raw=true",
-        url: '/categorias?categoria=oleos'
-    }
+        href: "/categorias?categoria=produtos-masculinos/",
+        icon: "fa-mars-stroke",
+        title: "Produtos <br /> Masculinos",
+        img: "https://newandrews.com.br/image-andrews/cards/Masculinos.png",
+    },
+    {
+        href: "/categorias?categoria=vitaminas/",
+        icon: "fa-capsules",
+        title: "Vitaminas",
+        img: "https://newandrews.com.br/image-andrews/cards/Vitaminas.png",
+    },
+    {
+        href: "/categorias?categoria=pre-treinos/",
+        icon: "fa-bolt",
+        title: "Pré-Treinos",
+        img: "https://newandrews.com.br/image-andrews/cards/Pre-Treinos.png",
+    },
+    {
+        href: "/categorias?categoria=oleos/",
+        icon: "fa-tint",
+        title: "Óleos",
+        img: "https://newandrews.com.br/image-andrews/cards/Oleos.png",
+    },
+    {
+        href: "/categorias?categoria=produtos-femininos/",
+        icon: "fa-venus",
+        title: "Produtos <br /> Femininos",
+        img: "https://newandrews.com.br/image-andrews/cards/Femininos.png",
+    },
 ];
 
-function Categories() {
+export default function Categorias() {
     return (
-        <div className={styles.categories}>
-            {/* 2. Use o método .map() para iterar sobre os dados */}
-            {categoryData.map((category) => (
-                // 3. Renderize um 'category-item' para cada objeto
-                // A prop 'key' é essencial no React para listas!
-                <a href={category.url} key={category.name} className={styles.categoryItem}>
-                    <img src={category.imageUrl} alt={`Imagem da categoria ${category.name}`} />
-                    <h4>{category.name}</h4>
-                </a>
-            ))}
-        </div>
+        <section className={styles.asCategorias}>
+            <div className={styles.divCategoriasPai}>
+                <div className={styles.divCategoriasFilho}>
+                    <div className={styles.boxNetos}>
+                        {categorias.map((cat, index) => (
+                            <a
+                                key={index}
+                                href={cat.href}
+                                className={styles.divCategoriasNetos}
+                            >
+                                <h3
+                                    className={styles.tituloCard}
+                                    dangerouslySetInnerHTML={{
+                                        __html: `<span><i class="fa ${cat.icon}"></i></span><br />${cat.title}`,
+                                    }}
+                                />
+                                <img src={cat.img} alt={cat.title.replace(/<br \/>/g, " ")} />
+                            </a>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </section>
     );
 }
-
-export default Categories;
+;

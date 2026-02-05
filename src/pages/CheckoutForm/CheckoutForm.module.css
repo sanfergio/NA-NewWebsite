@@ -105,7 +105,7 @@
 
 .cardButton {
   width: 100%;
-  background-color: #831926;
+  background-color: #2baf5e;
   color: #fff;
   border: none;
   padding: 12px;
@@ -118,7 +118,7 @@
 }
 
 .cardButton:hover {
-  background-color: #b22234;
+  background-color: #000000;
   transform: translateY(-1px);
 }
 
@@ -127,11 +127,11 @@
 }
 
 .finalize {
-  background-color: #831926;
+  background-color: #2baf5e;
 }
 
 .finalize:hover {
-  background-color: #b22234;
+  background-color: #000000;
 }
 
 .checkoutSummary {
@@ -219,7 +219,7 @@
 
 .summaryProduct span {
   font-weight: bold;
-  color: #831926;
+  color: #2baf5e;
   font-size: 14px;
 }
 
