@@ -5,33 +5,33 @@ import styles from './Categorias.module.css';
 const categoryData = [
     {
         name: "Bem-estar",
-        imageUrl: "",
+        imageUrl: "https://images.newandrews.com/assets/bem-estar-DnjxsNYc.png",
         url: '/objetivos?objetivo=bem-estar'
     },
     {
         name: "Ganho de massa",
-        imageUrl: "",
+        imageUrl: "https://images.newandrews.com/assets/musculo.png",
         url: '/objetivos?objetivo=ganho-massa'
     },
 
     {
         name: "Emagrecimento",
-        imageUrl: "",
+        imageUrl: "https://images.newandrews.com/assets/emagrecimento.png",
         url: '/objetivos?objetivo=emagrecimento'
     },
     {
         name: "Melhor sono",
-        imageUrl: "",
+        imageUrl: "https://images.newandrews.com/assets/sono.png",
         url: '/objetivos?objetivo=melhor-sono'
     },
     {
         name: "++ Libido",
-        imageUrl: "",
+        imageUrl: "https://images.newandrews.com/assets/libido.png",
         url: '/objetivos?objetivo=libido'
     },
     {
         name: "++ Disposição",
-        imageUrl: "",
+        imageUrl: "https://images.newandrews.com/assets/energia.png",
         url: '/objetivos?objetivo=disposicao'
     },
 
