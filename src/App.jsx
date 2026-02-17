@@ -23,7 +23,6 @@ import BrandsFilter from './pages/BrandsFilter/BrandsFilter.jsx';
 import RememberPassword from './components/RememberPassword/RememberPassword.jsx';
 import ChangePassword from './pages/UserProfile/ChangePasswordTab.jsx';
 
-
 // --- PÁGINAS DE CARRINHO E CHECKOUT ---
 // Componentes relacionados ao carrinho de compras e processo de checkout
 import CartProducts from './pages/CartProducts/CartProducts.jsx'
@@ -37,10 +36,6 @@ import PoliticaEnvio from "./pages/PoliticaEnvio/PoliticaEnvio.jsx";
 import PoliticaDevolucao from './pages/PoliticaDevolucao/PoliticaDevolucao.jsx';
 import FormasPagamento from './pages/FormasPagamento/FormasPagamento.jsx';
 import PerfilUsuario from './pages/UserProfile/UserProfile.jsx'
-// --- PÁGINAS DE ADMIN (Dashboard) ---
-import DashboardProducts from './Admin/DataBase/Products/DashboardProducts.jsx';
-import EditProduct from './Admin/DataBase/Products/EditProducts.jsx';
-import AddProduct from './Admin/DataBase/Products/AddProduct.jsx';
 
 
 // --- DEFINIÇÃO DO COMPONENTE PRINCIPAL (App) ---
@@ -73,11 +68,6 @@ function App() {
         <Route path="/politica-envio" element={<PoliticaEnvio />} />
         <Route path="/politica-devolucao" element={<PoliticaDevolucao />} />
         <Route path="/formas-pagamento" element={<FormasPagamento />} />
-
-        {/* Rotas do Painel de Admin */}
-        <Route path="/admin/dataBase/products" element={<DashboardProducts />} />
-        <Route path="/admin/dataBase/products/edit" element={<EditProduct />} />
-        <Route path="/admin/dataBase/products/add" element={<AddProduct />} />
 
         {/* Forma de pagamento */}
         <Route path='/compra-confirmada' element={<ConfirmPayment />} />
