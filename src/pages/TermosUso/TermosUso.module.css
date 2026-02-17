@@ -1,148 +1,255 @@
+:root {
+  --bg: #f5f7f8;
+  --card: #ffffff;
+  --accent: #008f4c;
+  --dark: #071217;
+  --muted: #6b7280;
+  --glass: rgba(255, 255, 255, 0.75);
+  --radius: 14px;
+  --transition: 250ms cubic-bezier(.2, .9, .3, 1);
+}
+
+.wrap {
+  max-width: 900px;
+  margin: 32px auto;
+  padding: 20px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  background: linear-gradient(90deg, #061018 0%, #0b1b20 100%);
+  border-radius: 12px;
+  color: #fff;
+  box-shadow: 0 8px 28px rgba(7, 18, 23, 0.25);
+  margin-bottom: 28px;
+}
+
+.brand {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.brand img {
+  height: 56px;
+  filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.45));
+}
+
+.brand h2 {
+  font-family: 'Archivo Narrow', sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.nav {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.btn {
+  background: var(--accent);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+}
+
+.btn i {
+  font-size: 1rem;
+}
+
+.btn.secondary {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(3, 62, 35, 0.12);
+}
+
+.btn.back {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Content Card */
+.card {
+  background: var(--card);
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(12, 18, 20, 0.04);
+  margin-top: 28px;
+}
+
+.card h1 {
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--dark);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 12px;
+}
+
+.card h1 i {
+  color: var(--accent);
+}
+
+/* Termos específicos */
 .termosContainer {
   width: 100%;
-  background-color: #fafafa;
-  padding: 3rem 1rem;
-  font-family: "Inter", "Poppins", sans-serif;
 }
 
 .termosConteudo {
   max-width: 900px;
   margin: 0 auto;
-  background-color: #ffffff;
-  border-radius: 12px;
-  padding: 3rem 3.5rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
-}
-
-.termosConteudo:hover {
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
+  padding: 20px;
 }
 
 .termosTitulo {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #000000;
-  text-align: center;
-  position: relative;
-  letter-spacing: -0.5px;
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--dark);
 }
 
-.termosTitulo::after {
-  content: "";
-  position: absolute;
-  bottom: -0.75rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 3px;
-  background-color: #000000;
-  border-radius: 3px;
-  opacity: 0.8;
+.termosTitulo i {
+  color: var(--accent);
 }
 
 .termosLista {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  counter-reset: term-counter;
 }
 
 .termoItem {
   display: flex;
-  align-items: flex-start;
-  gap: 1.25rem;
-  background: #fff;
-  border-left: 4px solid #000000;
-  padding: 1rem 1rem 1rem 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  gap: 16px;
+  padding: 24px;
+  margin-bottom: 20px;
+  background: var(--card);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(12, 18, 20, 0.04);
+  transition: transform var(--transition), box-shadow var(--transition);
+  border-left: 4px solid var(--accent);
 }
 
 .termoItem:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(3, 62, 35, 0.08);
 }
 
 .termoNumero {
-  background-color: #000000;
-  color: #fff;
-  font-weight: 600;
-  font-size: 1.1rem;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  box-shadow: 0 0 6px rgba(178, 34, 52, 0.4);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent);
+  min-width: 50px;
+  line-height: 1;
 }
 
 .termoTextos {
   flex: 1;
-  text-align: left;
 }
 
 .termoSubtitulo {
-  font-size: 1.4rem;
+  margin: 0 0 10px 0;
+  font-size: 1.3rem;
+  color: var(--dark);
   font-weight: 600;
-  color: #000000;
-  margin-bottom: 0.5rem;
 }
 
 .termoDescricao {
-  font-size: 1.05rem;
-  color: #333;
-  line-height: 1.8;
-  text-align: justify;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
 }
 
+/* Footer */
+.footer {
+  margin-top: 34px;
+  padding: 20px;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* Small helpers */
+.muted {
+  color: var(--muted);
+}
+
+.divider {
+  margin-top: 24px;
+  border-top: 1px solid #eee;
+  padding-top: 24px;
+  text-align: center;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-  .termosConteudo {
-    padding: 2rem 1.5rem;
-  }
-
-  .termosTitulo {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-  }
-
   .termoItem {
+    padding: 20px;
     flex-direction: column;
-    gap: 1rem;
-    padding: 1.25rem;
+    gap: 8px;
   }
 
   .termoNumero {
-    width: 2.2rem;
-    height: 2.2rem;
-    font-size: 1rem;
+    font-size: 1.5rem;
+    min-width: auto;
   }
 
-  .termoSubtitulo {
-    font-size: 1.25rem;
+  .termosTitulo {
+    font-size: 1.5rem;
   }
 
-  .termoDescricao {
-    font-size: 0.95rem;
-    line-height: 1.7;
+  .card {
+    padding: 24px;
   }
 }
 
-@media (max-width: 480px) {
-  .termosTitulo {
-    font-size: 1.75rem;
+@media (max-width: 520px) {
+  .header {
+    flex-direction: column;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .brand h2 {
+    font-size: 1rem;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .termoItem {
+    padding: 16px;
   }
 
   .termoSubtitulo {
     font-size: 1.1rem;
-  }
-
-  .termoDescricao {
-    font-size: 0.9rem;
   }
 }

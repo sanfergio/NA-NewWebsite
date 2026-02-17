@@ -4,28 +4,40 @@ import styles from './Categorias.module.css';
 // 1. Defina seus dados (Array de Objetos JS)
 const categoryData = [
     {
-        name: "Acessórios",
-        imageUrl: "https://github.com/machadocalebe/repo-sanfer-imagens/blob/main/brasMerica/imagens/Gemini_Generated_Image_xpckvxpckvxpckvx.png?raw=true",
-        url: '/categorias?categoria=acessorios'
+        name: "Bem-estar",
+        imageUrl: "",
+        url: '/objetivos?objetivo=bem-estar'
     },
     {
-        name: "Pneus",
-        imageUrl: "https://github.com/machadocalebe/repo-sanfer-imagens/blob/main/brasMerica/imagens/Gemini_Generated_Image_6k06q36k06q36k06.png?raw=true",
-        url: '/categorias?categoria=pneus'
+        name: "Ganho de massa",
+        imageUrl: "",
+        url: '/objetivos?objetivo=ganho-massa'
+    },
+
+    {
+        name: "Emagrecimento",
+        imageUrl: "",
+        url: '/objetivos?objetivo=emagrecimento'
     },
     {
-        name: "Peças",
-        imageUrl: "https://github.com/machadocalebe/repo-sanfer-imagens/blob/main/brasMerica/imagens/Gemini_Generated_Image_gdwyv9gdwyv9gdwy.png?raw=true",
-        url: '/categorias?categoria=pecas'
+        name: "Melhor sono",
+        imageUrl: "",
+        url: '/objetivos?objetivo=melhor-sono'
     },
     {
-        name: "Óleos",
-        imageUrl: "https://github.com/machadocalebe/repo-sanfer-imagens/blob/main/brasMerica/imagens/Gemini_Generated_Image_66bu5366bu5366bu.png?raw=true",
-        url: '/categorias?categoria=oleos'
-    }
+        name: "++ Libido",
+        imageUrl: "",
+        url: '/objetivos?objetivo=libido'
+    },
+    {
+        name: "++ Disposição",
+        imageUrl: "",
+        url: '/objetivos?objetivo=disposicao'
+    },
+
 ];
 
-function Categories() {
+function Categories2() {
     return (
         <div className={styles.categories}>
             {/* 2. Use o método .map() para iterar sobre os dados */}
@@ -41,4 +53,4 @@ function Categories() {
     );
 }
 
-export default Categories;
+export default Categories2;

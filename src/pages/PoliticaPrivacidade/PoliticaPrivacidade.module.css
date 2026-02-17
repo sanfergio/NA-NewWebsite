@@ -1,106 +1,169 @@
-.politicaContainer {
-  width: 100%;
-  background-color: #f9f9f9;
-  padding: 3rem 1rem;
-  font-family: "Inter", "Poppins", sans-serif;
+:root {
+  --bg: #f5f7f8;
+  --card: #ffffff;
+  --accent: #008f4c;
+  --dark: #071217;
+  --muted: #6b7280;
+  --glass: rgba(255, 255, 255, 0.75);
+  --radius: 14px;
+  --transition: 250ms cubic-bezier(.2, .9, .3, 1);
 }
 
-.politicaWrapper {
+.wrap {
   max-width: 900px;
-  margin: 0 auto;
+  margin: 32px auto;
+  padding: 20px;
 }
 
-.politicaCard {
-  background-color: #ffffff;
-  border-radius: 12px;
-  padding: 3rem 3.5rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
-}
-
-.politicaCard:hover {
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
-}
-
-.politicaHeader {
+/* Header */
+.header {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  justify-content: space-between;
+  padding: 18px 24px;
+  background: linear-gradient(90deg, #061018 0%, #0b1b20 100%);
+  border-radius: 12px;
+  color: #fff;
+  box-shadow: 0 8px 28px rgba(7, 18, 23, 0.25);
 }
 
-.politicaIcon {
-  width: 3.5rem;
-  height: 3.5rem;
-  color: #000000;
-  flex-shrink: 0;
-  transition: transform 0.4s ease;
+.brand {
+  display: flex;
+  gap: 14px;
+  align-items: center;
 }
 
-.politicaHeader:hover .politicaIcon {
-  transform: rotate(-10deg) scale(1.1);
+.brand img {
+  height: 56px;
+  filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.45));
 }
 
-.politicaTitle {
-  font-size: 2rem;
+.brand h2 {
+  font-family: 'Archivo Narrow', sans-serif;
   font-weight: 700;
-  color: #000000;
-  position: relative;
-  letter-spacing: -0.5px;
+  font-size: 1.25rem;
+  margin: 0;
 }
 
-.politicaTitle::after {
-  content: "";
-  position: absolute;
-  bottom: -0.75rem;
-  left: 0;
-  width: 60px;
-  height: 3px;
-  background-color: #000000;
-  border-radius: 3px;
-  opacity: 0.8;
+.nav {
+  display: flex;
+  gap: 12px;
+  align-items: center;
 }
 
-.politicaText {
-  color: #333333;
-  line-height: 1.8;
-  text-align: justify;
-}
-
-.politicaText p {
-  margin-bottom: 1rem;
+.btn {
+  background: var(--accent);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-size: 1rem;
 }
 
+.btn i {
+  font-size: 1rem;
+}
+
+.btn.secondary {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(3, 62, 35, 0.12);
+}
+
+.btn.back {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Content Card */
+.card {
+  background: var(--card);
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(12, 18, 20, 0.04);
+  margin-top: 28px;
+}
+
+.card h1 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--dark);
+}
+
+.card h1 i {
+  color: var(--accent);
+}
+
+.card p {
+  color: var(--muted);
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.card p:last-of-type {
+  margin-bottom: 0;
+}
+
+/* Footer */
+.footer {
+  margin-top: 34px;
+  padding: 20px;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* Small helpers */
+.muted {
+  color: var(--muted);
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-  .politicaCard {
-    padding: 2rem 2rem;
+  .card {
+    padding: 24px;
   }
 
-  .politicaTitle {
-    font-size: 2rem;
-  }
-
-  .politicaIcon {
-    width: 3rem;
-    height: 3rem;
-  }
-
-  .politicaText {
-    font-size: 1rem;
-    line-height: 1.7;
+  .card h1 {
+    font-size: 1.5rem;
   }
 }
 
-@media (max-width: 480px) {
-  .politicaCard {
-    padding: 1.5rem 1.5rem;
+@media (max-width: 520px) {
+  .header {
+    flex-direction: column;
+    gap: 14px;
+    align-items: flex-start;
   }
 
-  .politicaTitle {
-    font-size: 1.75rem;
+  .brand h2 {
+    font-size: 1rem;
   }
 
-  .politicaText {
-    font-size: 0.95rem;
+  .btn {
+    width: 100%;
+    text-align: center;
   }
+}
+
+.divider {
+  margin-top: 24px;
+  border-top: 1px solid #eee;
+  padding-top: 24px;
+  text-align: center;
 }
