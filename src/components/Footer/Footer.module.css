@@ -8,13 +8,13 @@
   color: white;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   padding: 1rem 2.5rem;
   gap: 1.5rem;
 }
 
 .newsletterLogo {
-  width: 80px;
+  width: 150px;
   height: auto;
   object-fit: contain;
 }
@@ -47,7 +47,7 @@
 }
 
 .newsletterInput button {
-  background: #000000;
+  background: #4cbe09;
   color: white;
   border: none;
   padding: 0.55rem 0.7rem;

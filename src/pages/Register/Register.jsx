@@ -499,7 +499,6 @@ export default function Register() {
           {success && <div className={styles.formSuccess}>{success}</div>}
         </div>
       </main>
-      <Footer />
 
       {/* Modal de termos */}
       {showTermsModal && (
