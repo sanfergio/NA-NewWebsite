@@ -46,7 +46,7 @@
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(17, 17, 17, 0.1);
   scale: 1;
-  width: auto;
+  width: 90%;
   transition: box-shadow 0.3s ease;
   padding: 20px;
 }
@@ -66,7 +66,7 @@
 
 /* Estilo do H1 (o nome da marca) */
 .brandTitle {
-  font-size: 38px;
+  font-size: 28px;
   line-height: 1.2;
   margin: 0;
   font-weight: 900;
@@ -76,7 +76,7 @@
   justify-content: center;
   gap: 15px;
   text-align: center;
-  width: 100%;
+  width: 90%;
 }
 
 .brandTitle {

@@ -37,10 +37,7 @@ function Home() {
                     </h1>
 
                     <h2 className={styles.sloganSubtitle}>
-                        <strong>CONHEÇA OS PRODUTOS NEW ANDREW'S:</strong>
-                        <br />
-                        <br />
-                        Suplementos para a vida!
+                        <strong>Suplementos para a vida!</strong>
                     </h2>
                 </section>
 

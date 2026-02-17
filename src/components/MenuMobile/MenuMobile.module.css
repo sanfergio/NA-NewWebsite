@@ -22,7 +22,7 @@
   left: -300px;
   width: 250px;
   height: 100%;
-  background-color: #179c4a;
+  background-color: #000;
   color: white;
   transition: 0.3s;
   z-index: 1000;
@@ -106,7 +106,7 @@
   top: 0;
   width: 4px;
   height: 100%;
-  background-color: #000000;
+  background-color: #179c4a;
   transform: scaleY(0);
   transform-origin: top;
   transition: transform 0.25s ease;
