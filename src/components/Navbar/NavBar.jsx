@@ -31,7 +31,7 @@ const navItems = [
         href: '/ofertas'
     },
     {
-        name: "Atacados",
+        name: "Atacado",
         iconUrl: 'https://cdn-icons-png.flaticon.com/512/2581/2581576.png',
         href: '/atacados'
     },

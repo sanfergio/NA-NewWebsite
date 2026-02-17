@@ -14,53 +14,73 @@ export default function PoliticaDevolucao() {
     }
   }, []);
 
+  const handleGoBack = () => {
+    window.history.back();
+  };
+
   return (
     <>
-      <Header />
       <WhatsAppButton />
-      <div className={styles.returnContainer}>
-        <div className={styles.returnWrapper}>
-          <div className={styles.returnCard}>
-            <div className={styles.returnHeader}>
-              <RotateCcw className={styles.returnIcon} />
-              <h1 className={styles.returnTitle}>Política de Devolução</h1>
+      
+      <div className={styles.wrap}>
+        <header className={styles.header}>
+          <div className={styles.brand}>
+            <img 
+              src="https://newandrews.com.br/image-andrews/logo_three.png" 
+              alt="New Andrew's - logo" 
+            />
+            <div>
+              <h2>Produtos New Andrew's LTDA</h2>
+              <div className={styles.muted} style={{ fontSize: "0.85rem" }}>
+                Qualidade • Transparência • Inovação
+              </div>
             </div>
-
-            <h2 className={styles.returnText}>
-              <p>
-                A Brasmerica preza pela satisfação completa de seus clientes ao adquirir motopeças importadas.
-                Nossa política de devolução e troca foi desenvolvida em total conformidade com o Código de Defesa
-                do Consumidor. Aceitamos a devolução por desistência ou arrependimento em até 7 (sete) dias corridos,
-                contados a partir da data de recebimento do produto, garantindo seu direito de manifestar insatisfação
-                após a entrega.
-              </p>
-
-              <p>
-                Para iniciar qualquer processo de troca ou devolução, é imprescindível que o cliente entre em contato com
-                o nosso Serviço de Atendimento, informando o número do pedido e o motivo detalhado. É fundamental que o
-                produto seja devolvido em sua embalagem original, sem apresentar qualquer indício de uso, montagem ou
-                violação de lacres e etiquetas originais, pois as peças passarão por uma rigorosa inspeção ao retornarem
-                ao nosso Centro de Distribuição.
-              </p>
-
-              <p>
-                Em casos de defeito de fabricação comprovado, a Brasmerica se responsabiliza integralmente pelos custos
-                logísticos envolvidos no retorno da peça e no reenvio de um novo item ao cliente. Contudo, se a solicitação
-                for motivada por simples desistência ou escolha inadequada do produto, as despesas de frete para o envio
-                de volta à nossa central serão de responsabilidade do cliente.
-              </p>
-
-              <p>
-                A Brasmerica reserva-se o direito de recusar qualquer solicitação que não atenda integralmente às condições
-                estabelecidas nesta política. Nosso objetivo é processar sua solicitação de forma ágil e justa, e nossa
-                equipe de atendimento está sempre disponível para esclarecer dúvidas e garantir a melhor e mais transparente
-                experiência de compra.
-              </p>
-            </h2>
           </div>
-        </div>
+
+          <nav className={styles.nav}>
+            <button className={`${styles.btn} ${styles.back}`} onClick={handleGoBack}>
+              <i className="fa fa-angle-left"></i> Voltar ao site
+            </button>
+          </nav>
+        </header>
+
+        <main>
+          <section className={styles.card}>
+            <h1>
+              <i className="fa fa-exchange-alt" style={{ color: "var(--accent)" }}></i>
+              Política de Troca e Devolução
+            </h1>
+
+            <p>
+              A New Andrew's tem uma política de troca e devolução que visa garantir a satisfação total de seus clientes. A empresa aceita a troca ou devolução de produtos dentro do prazo de 7 dias corridos a partir da data de recebimento do pedido, conforme previsto no Código de Defesa do Consumidor.
+            </p>
+
+            <p>
+              Para solicitar a troca ou devolução de um produto, o cliente deve entrar em contato com o serviço de atendimento da New Andrew's, informando o motivo da troca ou devolução e seguindo as instruções fornecidas pela empresa. O produto deve ser devolvido em sua embalagem original, sem sinais de uso ou violação do lacre original.
+            </p>
+
+            <p>
+              Caso o motivo da troca ou devolução seja um defeito de fabricação, a New Andrew's se responsabiliza pelos custos de envio do produto de volta à empresa e pelo envio de um novo produto ao cliente. No entanto, se a troca ou devolução for por arrependimento ou insatisfação, os custos de envio ficam por conta do cliente.
+            </p>
+
+            <p>
+              A New Andrew's reserva-se o direito de recusar a troca ou devolução de produtos que não estejam em conformidade com a política de trocas e devoluções, ou que apresentem sinais de uso ou violação do lacre original. A empresa está sempre disponível para esclarecer dúvidas e garantir a melhor experiência de compra.
+            </p>
+
+            <div className={styles.divider}>
+              <button className={styles.btn} onClick={handleGoBack}>
+                <i className="fa fa-angle-left"></i> Voltar ao site
+              </button>
+            </div>
+          </section>
+        </main>
+
+        <footer className={styles.footer}>
+          © 2026 Produtos New Andrew's LTDA — Todos os direitos reservados.<br />
+          Política de Troca e Devolução.
+        </footer>
       </div>
-      <Footer />
+
     </>
   );
 }

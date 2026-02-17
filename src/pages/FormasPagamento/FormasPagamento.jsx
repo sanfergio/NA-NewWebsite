@@ -14,53 +14,73 @@ export default function FormasPagamento() {
     }
   }, []);
 
+  const handleGoBack = () => {
+    window.history.back();
+  };
+
   return (
     <>
-      <Header />
       <WhatsAppButton />
-      <div className={styles.pagamentoContainer}>
-        <div className={styles.pagamentoWrapper}>
-          <div className={styles.pagamentoCard}>
-            <div className={styles.pagamentoHeader}>
-              <CreditCard className={styles.pagamentoIcon} />
-              <h1 className={styles.pagamentoTitle}>Formas de Pagamento</h1>
+
+      <div className={styles.wrap}>
+        <header className={styles.header}>
+          <div className={styles.brand}>
+            <img
+              src="https://newandrews.com.br/image-andrews/logo_three.png"
+              alt="New Andrew's - logo"
+            />
+            <div>
+              <h2>Produtos New Andrew's LTDA</h2>
+              <div className={styles.muted} style={{ fontSize: "0.85rem" }}>
+                Qualidade • Transparência • Inovação
+              </div>
             </div>
-
-            <h2 className={styles.pagamentoText}>
-              <p>
-                A Brasmérica está comprometida em oferecer a você uma experiência de compra ágil, segura e totalmente
-                descomplicada. Para processar todos os pagamentos de forma transparente e protegida, utilizamos
-                plataformas de pagamento reconhecidas por sua robustez e confiabilidade. Nosso objetivo principal é
-                garantir que você possa adquirir suas motopeças importadas com a máxima conveniência e tranquilidade.
-              </p>
-
-              <p>
-                Todas as transações financeiras realizadas em nosso site, desde a inserção de dados de cartão até a
-                confirmação de boletos, são protegidas por criptografia avançada e protocolos de segurança de última
-                geração, como o SSL (Secure Sockets Layer). Esta medida assegura que seus dados financeiros permaneçam
-                confidenciais e protegidos contra qualquer acesso indevido, garantindo o rigoroso cumprimento das normas
-                de segurança do mercado de pagamentos digitais.
-              </p>
-
-              <p>
-                Pensando na sua comodidade, a Brasmérica disponibiliza uma ampla variedade de opções de pagamento. Você
-                pode optar por métodos tradicionais e modernos, incluindo pagamento via cartões de crédito (com
-                possibilidade de parcelamento), cartões de débito, transferência instantânea via PIX e pagamento por
-                boleto bancário. Nosso sistema é integrado para processar todas essas modalidades com rapidez e
-                eficiência.
-              </p>
-
-              <p>
-                Ao selecionar qualquer uma das formas de pagamento disponíveis na Brasmérica, você tem a garantia de que
-                suas informações são tratadas com o mais alto nível de sigilo e responsabilidade. Nosso compromisso é
-                assegurar que a etapa de pagamento seja a mais segura, prática e eficiente de todo o seu processo de
-                compra.
-              </p>
-            </h2>
           </div>
-        </div>
+
+          <nav className={styles.nav}>
+            <button className={`${styles.btn} ${styles.back}`} onClick={handleGoBack}>
+              <i className="fa fa-angle-left"></i> Voltar ao site
+            </button>
+          </nav>
+        </header>
+
+        <main>
+          <section className={styles.card}>
+            <h1>
+              <i className="fa fa-credit-card" style={{ color: "var(--accent)" }}></i>
+              Formas de Pagamento
+            </h1>
+
+            <p>
+              A New Andrew's Suplementos utiliza a plataforma <strong>Vindi</strong> em parceria com a <strong>Yapay</strong> para processar todos os pagamentos de forma segura e transparente. Nosso objetivo é oferecer métodos confiáveis e convenientes para que você possa finalizar suas compras com total tranquilidade.
+            </p>
+
+            <p>
+              As transações realizadas no site são protegidas com criptografia avançada, garantindo que os dados financeiros dos clientes, como informações de cartão de crédito ou débito, permaneçam totalmente seguros. Além disso, seguimos rigorosamente as normas de segurança e conformidade de pagamentos online.
+            </p>
+
+            <p>
+              O Vindi com Yapay permite diversas formas de pagamento, incluindo cartões de crédito, cartões de débito, PIX e boletos bancários. Também oferecemos recursos de parcelamento seguro, mantendo sempre a transparência e a confiabilidade para o cliente.
+            </p>
+
+            <p>
+              Ao escolher qualquer método de pagamento disponível, você tem a garantia de que suas informações são tratadas com sigilo e responsabilidade, assegurando uma experiência de compra segura, prática e eficiente.
+            </p>
+
+            <div className={styles.divider}>
+              <button className={styles.btn} onClick={handleGoBack}>
+                <i className="fa fa-angle-left"></i> Voltar ao site
+              </button>
+            </div>
+          </section>
+        </main>
+
+        <footer className={styles.footer}>
+          © 2026 Produtos New Andrew's LTDA — Todos os direitos reservados.<br />
+          Política de Pagamento.
+        </footer>
       </div>
-      <Footer />
+
     </>
   );
 }

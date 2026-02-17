@@ -159,7 +159,7 @@ export default function DashboardProducts() {
           <div className={styles.logo}>BM</div>
           <div>
             <h1>Brasmérica</h1>
-            <p>Gerenciamento de Estoque — 2025</p>
+            <p>Gerenciamento de Estoque — 2026</p>
           </div>
         </div>
         <div className={styles.topActions}>
