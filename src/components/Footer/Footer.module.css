@@ -154,8 +154,8 @@
   display: flex;
   gap: 1rem;
   align-items: center;
+  background-image: url(../../public/mock-images/bem-estar.png);
 }
-
 
 .followLeft {
   display: flex;
