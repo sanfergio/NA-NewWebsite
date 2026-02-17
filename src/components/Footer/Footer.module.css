@@ -154,7 +154,12 @@
   display: flex;
   gap: 1rem;
   align-items: center;
-  background-image: url(../../public/mock-images/bem-estar.png);
+  background-image: url(../../public/mock-images/emagrecimento.png);
+  background-image: url(../../public/mock-images/energia.png);
+  background-image: url(../../public/mock-images/libido.png);
+  background-image: url(../../public/mock-images/muscular.png);
+  background-image: url(../../public/mock-images/sono.png);
+  background-repeat: no-repeat;
 }
 
 .followLeft {
