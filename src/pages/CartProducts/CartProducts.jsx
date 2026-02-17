@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import styles from "./CartProducts.module.css";
-import { mockProducts } from "../../mocks/products";
 import Footer from "../../components/Footer/Footer";
 import ShortHeader from "../../components/ShortHeader/ShortHeader";
 import WhatsAppButton from "../../components/WhatsappButton";
