@@ -32,6 +32,7 @@
   border-radius: 30px;
   overflow: hidden;
   align-items: center;
+  justify-content: space-around;
   padding: 2px;
 }
 
@@ -193,7 +194,7 @@
   /* Newsletter: Empilhar verticalmente */
   .newsletter {
     flex-direction: column;
-    text-align: left;
+    text-align: center;
     padding: 2rem 1.5rem;
     gap: 1rem;
   }
@@ -201,7 +202,7 @@
   .newsletter h6 {
     font-size: 1rem;
     /* Ajustado: 0.2rem ficaria ilegível */
-    text-align: left;
+    text-align: center;
     width: 100%;
   }
 
