@@ -234,7 +234,6 @@ export default function Login() {
           </form>
         </div>
       </main>
-      <Footer />
     </>
   );
 }

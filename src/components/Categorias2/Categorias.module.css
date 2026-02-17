@@ -4,7 +4,7 @@
     justify-content: space-around;
     width: 100%;
     flex-wrap: wrap;
-    gap: 50px;
+    gap: 68px;
 }
 
 .categories a {
@@ -20,6 +20,7 @@
     text-align: center;
     cursor: pointer;
     scale: 1;
+    width: 12%;
     transition: transform 0.3s ease;
 }
 
@@ -28,8 +29,8 @@
 }
 
 .categoryItem img {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     object-fit: cover;
 }
@@ -59,6 +60,6 @@
         justify-content: space-around;
         width: 100%;
         flex-wrap: wrap;
-        gap: 10px;
+        gap: 5px;
     }
 }

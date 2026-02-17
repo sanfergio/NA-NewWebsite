@@ -20,9 +20,9 @@ export default function InputSearch() {
     const fetchProducts = async () => {
       setLoading(true);
       const { data, error } = await supabase
-        .from("DBproducts")
-        .select("id, name, img1, price, url, disponible")
-        .eq("disponible", 0); // ✅ busca somente os disponíveis
+        .from("db_na_products")
+        .select("id, name, mockup_img, varejo_value, disponible")
+        .eq("disponible", 1); // ✅ busca somente os disponíveis
 
       if (error) {
         console.error("Erro ao buscar produtos:", error);
@@ -89,19 +89,18 @@ export default function InputSearch() {
             <div className={styles.resultados}>
               {resultados.map((produto) => (
                 <a
-                  href={produto.url}
                   key={produto.id}
                   className={styles.resultadoItem}
                 >
                   <img
-                    src={produto.img1}
+                    src={produto.mockup_img}
                     alt={produto.name}
                     className={styles.imagemProduto}
                   />
                   <div className={styles.infoProduto}>
                     <p className={styles.nomeProduto}>{produto.name}</p>
                     <p className={styles.precoProduto}>
-                      R$ {Number(produto.price).toFixed(2)}
+                      R$ {Number(produto.varejo_value).toFixed(2)}
                     </p>
                   </div>
                 </a>
