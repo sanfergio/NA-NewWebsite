@@ -50,7 +50,7 @@ export default function QuemSomos() {
           </div>
 
           <div className={styles.botaoContainer}>
-            <a href="https://api.whatsapp.com/send/?phone=553334122593&text=Ol%C3%A1%21+Vim+pelo+website+e+desejo+tirar+d%C3%BAvidas.&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" className={styles.botaoContato}>
+            <a href="https://api.whatsapp.com/send/?phone=5521972074398&text=Ol%C3%A1%21+Vim+pelo+website+e+desejo+tirar+d%C3%BAvidas.&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" className={styles.botaoContato}>
               Entre em contato
             </a>
           </div>

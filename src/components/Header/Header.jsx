@@ -71,13 +71,6 @@ function Header() {
           </div>
 
           <div className={styles.userActions}>
-            <div className={styles.locationIcon}>
-              <FaMapMarkerAlt />
-              <p>
-                CONHEÇA <br />
-                <a href="/nossa-loja">NOSSA LOJA</a>
-              </p>
-            </div>
 
             <div className={styles.userIcon}>
               <FaUser />

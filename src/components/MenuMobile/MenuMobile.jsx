@@ -68,33 +68,36 @@ function MenuMobile({ isOpen, onClose }) {
 
           <li className={styles.menuItemCategorias}>
             <button onClick={() => setShowCategorias(!showCategorias)}>
-              <span>Categorias</span>
+              <span>Sessões</span>
               {showCategorias ? <FaChevronUp /> : <FaChevronDown />}
             </button>
 
             {showCategorias && (
               <ul className={styles.submenu}>
                 <li>
-                  <a href="/categorias?categoria=acessorios">Acessórios</a>
+                  <a href="/categorias">Categorias</a>
                 </li>
                 <li>
-                  <a href="/categorias?categoria=pneus">Pneus</a>
+                  <a href="/objetivos">Objetivos</a>
                 </li>
                 <li>
-                  <a href="/categorias?categoria=pecas">Peças</a>
+                  <a href="/ofertas">Promoções</a>
                 </li>
                 <li>
-                  <a href="/categorias?categoria=oleos">Óleos</a>
+                  <a href="/atacados">Compre por Atacado</a>
+                </li>
+                <li>
+                  <a href="/Kits">Kits</a>
                 </li>
               </ul>
             )}
           </li>
 
           <li>
-            <a 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              href="https://api.whatsapp.com/send/?phone=553334122593&text=Ol%C3%A1%21+Vim+pelo+website+e+desejo+tirar+d%C3%BAvidas.&type=phone_number&app_absent=0"
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://api.whatsapp.com/send/?phone=5521972074398&text=Ol%C3%A1%21+Vim+pelo+website+e+desejo+tirar+d%C3%BAvidas.&type=phone_number&app_absent=0"
             >
               Contato
             </a>

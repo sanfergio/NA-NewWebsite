@@ -7,7 +7,7 @@ const WhatsAppButton = () => {
   const phoneNumber = "553334122593";
   const message = "Olá! Vim pelo website e desejo tirar dúvidas.";
   const encodedMessage = encodeURIComponent(message);
-  const whatsappHref = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+  const whatsappHref = `https://api.whatsapp.com/send/?phone=5521972074398&text=Ol%C3%A1%21+Vim+pelo+website+e+desejo+tirar+d%C3%BAvidas.&type=phone_number&app_absent=0`;
 
   // Estilos para o link (botão)
   const linkStyle = {

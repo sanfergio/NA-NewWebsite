@@ -201,6 +201,7 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  padding: 10px 0;
 }
 
 /* resto do CSS permanece igual */

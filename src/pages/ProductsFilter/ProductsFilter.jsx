@@ -87,7 +87,6 @@ export default function ProductsFilter() {
     <>
       <Header />
       <WhatsAppButton />
-      <NavBar />
       <HomeButton />
 
       <div className={styles.produtosContainer}>

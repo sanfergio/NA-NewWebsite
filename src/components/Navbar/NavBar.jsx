@@ -34,6 +34,11 @@ const navItems = [
         name: "Atacados",
         iconUrl: 'https://cdn-icons-png.flaticon.com/512/2581/2581576.png',
         href: '/atacados'
+    },
+    {
+        name: "Kits",
+        iconUrl: 'https://cdn-icons-png.flaticon.com/512/1926/1926039.png',
+        href: '/kits'
     }
     // Adicione ou edite itens aqui para atualizar o NavBar automaticamente
 ];

@@ -74,6 +74,17 @@
 }
 
 @media (max-width: 1150px) {
+
+    .asCategorias {
+        width: 120vw;
+        padding: 10px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        background-color: whitesmoke;
+    }
+
     .divCategoriasNetos {
         width: 50%;
     }

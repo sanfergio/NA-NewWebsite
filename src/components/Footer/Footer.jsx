@@ -1,5 +1,6 @@
-import { Mail, Phone, Clock, Instagram, Facebook, CreditCard } from "lucide-react"
+import { Mail, Phone, Clock, Instagram, Facebook, CreditCard, Youtube } from "lucide-react"
 import { SiPix, SiVisa, SiMastercard, SiAmericanexpress } from "react-icons/si";
+
 
 import styles from "./Footer.module.css"
 
@@ -25,24 +26,24 @@ export default function Footer() {
         <div className={styles.footerGrid}>
 
           <div>
-            <h6 className={styles.footerHeading}>Institucional</h6>
+            <h6 className={styles.footerHeading}>Central de Acesso</h6>
             <div className={styles.footerLinks}>
-              <a href="/quem-somos">Quem Somos</a>
+              <a href="/quem-somos">Sobre a New Andrew's</a>
+              <a target="_blank" href="https://api.whatsapp.com/send/?phone=5521972074398&text=Ol%C3%A1%21+Vim+pelo+website+e+desejo+tirar+d%C3%BAvidas.&type=phone_number&app_absent=0">Entre em Contato</a>
               <a href="/termo-de-uso">Termos de Uso</a>
               <a href="/politica-privacidade">Política de Privacidade</a>
-              <a href="/politica-envio">Política de Envio e Entrega</a>
-              <a href="/politica-devolucao">Política de Devolução</a>
-              <a target="_blank" href="https://api.whatsapp.com/send/?phone=553334122593&text=Ol%C3%A1%21+Vim+pelo+website+e+desejo+tirar+d%C3%BAvidas.&type=phone_number&app_absent=0">Entre em Contato</a>
+              <a href="/politica-devolucao">Política de Troca/Devolução</a>
               <a href="/formas-pagamento">Formas de Pagamento</a>
+              <a href="/politica-envio">Política de Envio e Entrega</a>
             </div>
           </div>
 
           <div>
             <h6 className={styles.footerHeading}>Contato</h6>
             <div className={styles.footerContact}>
-              <p><Phone size={18} color="#000000" /> (33) 3412-2593</p>
-              <p><Mail size={18} color="#000000" /> gidero80@gmail.com </p>
-              <p><Clock size={18} color="#000000" /> Segunda a Sexta-feira das 09:00 às 18:00 </p>
+              <p><Phone size={18} color="#000000" /> (21) 97207-4398</p>
+              <p><Clock size={18} color="#000000" /> Segunda a Sexta-feira das <br /> 09:00 às 18:00 </p>
+              <p><Mail size={18} color="#000000" /> atendimento@newandrews.com.br </p>
             </div>
           </div>
 
@@ -50,8 +51,11 @@ export default function Footer() {
             <div className={styles.footerSocial}>
               <h6 className={styles.footerHeading}>Nossas Redes</h6>
               <div className={styles.footerIcons}>
-                <a target="_blank" href="https://www.instagram.com/brasmerica_motopecas/" aria-label="Instagram"><Instagram size={20} /></a>
-                <a target="_blank" href="https://www.facebook.com/brasmericamotopecas.santos/" aria-label="Facebook"><Facebook size={20} /></a>
+                <a target="_blank" href="https://www.instagram.com/newandrewssuplementoss/" aria-label="Instagram"><Instagram size={20} /></a>
+                <a target="_blank" href="https://www.facebook.com/people/Produtos-New-Andrews-LTDA/61560718401370/" aria-label="Facebook"><Facebook size={20} /></a>
+                <a target="_blank" href="https://api.whatsapp.com/send/?phone=5521972074398&text=Ol%C3%A1%21+Vim+pelo+website+e+desejo+tirar+d%C3%BAvidas.&type=phone_number&app_absent=0" aria-label="WhatsApp"><Phone size={20} /></a>
+                <a target="_blank" href="https://www.youtube.com/@newandrewssuplementoss" aria-label="YouTube"><Youtube size={20} /></a>
+                {/* <a target="_blank" href="https://www.tiktok.com/@newandrewssuplementos" aria-label="TikTok"><FaTiktok size={20} /></a> */}
               </div>
             </div>
 
@@ -103,20 +107,16 @@ export default function Footer() {
       <div className={styles.followRow}>
         <div className={styles.followContent}>
           <div className={styles.followLeft}>
+
             <h6 className={styles.followTitle}>Siga-nos</h6>
+
             <div className={styles.socialInline}>
-              <a target="_blank" href="https://www.instagram.com/brasmerica_motopecas/" aria-label="Instagram"><Instagram size={20} /></a>
-              <a target="_blank" href="https://www.facebook.com/brasmericamotopecas.santos/" aria-label="Facebook"><Facebook size={20} /></a>
+              <a target="_blank" href="https://www.instagram.com/newandrewssuplementoss/" aria-label="Instagram"><Instagram size={20} /></a>
+              <a target="_blank" href="https://www.facebook.com/people/Produtos-New-Andrews-LTDA/61560718401370/" aria-label="Facebook"><Facebook size={20} /></a>
+              <a target="_blank" href="https://api.whatsapp.com/send/?phone=5521972074398&text=Ol%C3%A1%21+Vim+pelo+website+e+desejo+tirar+d%C3%BAvidas.&type=phone_number&app_absent=0" aria-label="WhatsApp"><Phone size={20} /></a>
+              <a target="_blank" href="https://www.youtube.com/@newandrewssuplementoss" aria-label="YouTube"><Youtube size={20} /></a>
+              {/* <a target="_blank" href="https://www.tiktok.com/@newandrewssuplementos" aria-label="TikTok"><FaTiktok size={20} /></a> */}
             </div>
-          </div>
-          <div className={styles.followRight}>
-            <p className={styles.address}>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#000000" strokeWidth="2">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                <circle cx="12" cy="10" r="3"></circle>
-              </svg>
-              São João Evangelista MG, Rua José Guimarães número 509 - Centro, 39705000
-            </p>
           </div>
         </div>
       </div>
