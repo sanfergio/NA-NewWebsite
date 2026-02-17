@@ -5,33 +5,33 @@ import styles from './Categorias.module.css';
 const categoryData = [
     {
         name: "Bem-estar",
-        imageUrl: "https://images.newandrews.com/assets/bem-estar-DnjxsNYc.png",
+        imageUrl: "https://github.com/sanfergio/NA-NewWebsite/blob/master/src/public/mock-images/bem-estar.png?raw=true",
         url: '/objetivos?objetivo=bem-estar'
     },
     {
         name: "Ganho de massa",
-        imageUrl: "https://images.newandrews.com/assets/musculo.png",
+        imageUrl: "https://github.com/sanfergio/NA-NewWebsite/blob/master/src/public/mock-images/muscular.png?raw=true",
         url: '/objetivos?objetivo=ganho-massa'
     },
 
     {
         name: "Emagrecimento",
-        imageUrl: "https://images.newandrews.com/assets/emagrecimento.png",
+        imageUrl: "https://github.com/sanfergio/NA-NewWebsite/blob/master/src/public/mock-images/emagrecimento.png?raw=true",
         url: '/objetivos?objetivo=emagrecimento'
     },
     {
         name: "Melhor sono",
-        imageUrl: "https://images.newandrews.com/assets/sono.png",
+        imageUrl: "https://github.com/sanfergio/NA-NewWebsite/blob/master/src/public/mock-images/sono.png?raw=true",
         url: '/objetivos?objetivo=melhor-sono'
     },
     {
         name: "++ Libido",
-        imageUrl: "https://images.newandrews.com/assets/libido.png",
+        imageUrl: "https://github.com/sanfergio/NA-NewWebsite/blob/master/src/public/mock-images/libido.png?raw=true",
         url: '/objetivos?objetivo=libido'
     },
     {
         name: "++ Disposição",
-        imageUrl: "https://images.newandrews.com/assets/energia.png",
+        imageUrl: "https://github.com/sanfergio/NA-NewWebsite/blob/master/src/public/mock-images/energia.png?raw=true",
         url: '/objetivos?objetivo=disposicao'
     },
 
