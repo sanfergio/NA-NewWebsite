@@ -131,7 +131,7 @@ export default function UserProfile() {
       if (!email) return;
 
       const { data, error } = await supabase
-        .from("DBclients")
+        .from("db_na_clients")
         .select("*")
         .eq("email", email)
         .single();

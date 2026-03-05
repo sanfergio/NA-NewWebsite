@@ -85,7 +85,7 @@ export default function RememberPassword() {
       // 1. Verificar se o cliente existe no Supabase
       // Precisamos verificar se ele existe antes de enviar o código
       const { data: clientData, error: dbError } = await SupabaseClient
-        .from("DBclients")
+        .from("db_na_clients")
         .select("id")
         .eq("email", email)
         .single();
@@ -137,7 +137,7 @@ export default function RememberPassword() {
 
       // 2. Busca os dados do usuário para o Login Automático
       const { data: userData, error: userError } = await SupabaseClient
-        .from("DBclients")
+        .from("db_na_clients")
         .select("encrypted_key, email, id, name") // Adicionei 'nome' se houver, opcional
         .eq("email", email)
         .single();
