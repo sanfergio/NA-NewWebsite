@@ -1,0 +1,281 @@
+/* ReclameAquiSection.module.css */
+
+.section {
+    background: linear-gradient(135deg, #006b3a 0%, #00a459 50%, #00d473 100%);
+    padding: 4rem 2rem;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.container {
+    width: 100%;
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* Header & Selo */
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    margin-bottom: 3rem;
+}
+
+.raLogo {
+    height: 60px;
+    margin-bottom: 1rem;
+    background-color: #e6f6ec;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-weight: bolder;
+}
+
+.titleWrapper {
+    display: flex;
+    align-items: left;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+}
+
+.raSeal {
+    background: linear-gradient(135deg, #00a459 0%, #008246 100%);
+    color: rgb(255, 247, 0);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 4px 6px rgba(0, 164, 89, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.subtitle {
+    color: #ffffff;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    max-width: 600px;
+}
+
+/* Cards Grid */
+.cardsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-top: 4px solid #00a459;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 164, 89, 0.15);
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.stars {
+    color: #fbbc04;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+.status {
+    background-color: #e6f6ec;
+    color: #00a459;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.cardTitle {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    color: #222;
+}
+
+.cardText {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+.cardFooter {
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+    color: #999;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
+}
+
+/* Actions / CTA */
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btnPrimary {
+    background-color: #00a459;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.btnPrimary:hover {
+    background-color: #ffffff;
+}
+
+.btnSecondary {
+    background-color: transparent;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    border: 2px solid #00a459;
+    transition: all 0.2s;
+}
+
+.btnSecondary:hover {
+    background-color: #e6f6ec;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsivo */
+@media (max-width: 1150px) {
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btnPrimary,
+    .btnSecondary {
+        width: 100%;
+        text-align: left;
+    }
+
+    /* Cards - Mantendo os 3 na mesma linha com scroll horizontal suave */
+    .cardsGrid {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        padding-bottom: 1rem; /* Espaço para não cortar a sombra e a barra de rolagem */
+        scroll-snap-type: x mandatory; /* Ajuda a "travar" o card na tela ao rolar */
+        -webkit-overflow-scrolling: touch; /* Scroll mais fluido no iOS */
+    }
+
+    /* Cards Menores */
+    .card {
+        flex: 0 0 auto; /* Impede que os cards encolham e quebrem a linha */
+        scroll-snap-align: center; /* Alinha o card no centro ao deslizar */
+        width: 85vw;        
+        background: white;
+        border-radius: 12px;
+        padding: 1rem;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        border-top: 4px solid #00a459;
+        display: flex;
+
+    }
+
+    /* Reduzindo os textos do card no mobile para encaixar melhor */
+    .cardTitle {
+        font-size: 1rem;
+    }
+
+    .cardText {
+        font-size: 0.85rem;
+    }
+
+    .stars {
+        font-size: 1rem;
+    }
+
+    .status {
+        font-size: 0.7rem;
+        padding: 3px 6px;
+    }
+
+    /* Ajuste da section para o mobile */
+    .section {
+        background: linear-gradient(135deg, #006b3a 0%, #00a459 50%, #00d473 100%);
+        padding: 3rem 1rem; /* Diminuí o padding lateral para ganhar espaço na tela */
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        color: #333;
+        display: flex;
+        justify-content: center;
+        border-radius: 0px;
+        width: 100%;
+        /* Importante para que o scroll horizontal funcione sem quebrar o layout da página */
+        max-width: 100vw;
+        overflow: hidden; 
+    }
+}
+
+/* Esconder a barra de rolagem horizontal (opcional, deixa mais clean) */
+@media (max-width: 1150px) {
+    .cardsGrid::-webkit-scrollbar {
+        display: none;
+    }
+    .cardsGrid {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+}

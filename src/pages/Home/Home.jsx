@@ -12,6 +12,7 @@ import { useEffect, useState } from 'react';
 import Header from '../../components/Header/Header.jsx';
 import WhatsAppButton from '../../components/WhatsappButton.jsx';
 import AllProductsList from '../../components/AllProductsList/AllProductsList.jsx';
+import ReclameAquiSection from '../../components/ReclameAqui/ReclameAquiSection.jsx';
 
 function Home() {
     return (
@@ -23,7 +24,7 @@ function Home() {
             <NavBar />
 
             {/* Conteúdo principal da página */}
-            <main className={styles.main} role="main" aria-label="Página inicial da BrasMérica Moto Peças">
+            <main className={styles.main} role="main">
 
                 {/* Carrossel principal */}
                 <section className={styles.carousel} aria-label="Carrossel de destaques">
@@ -65,6 +66,8 @@ function Home() {
                     <Categories2 />
                     <br />
                 </section>
+
+                <ReclameAquiSection />
 
                 {/* Categorias */}
                 <section aria-labelledby="categorias-titulo">
