@@ -50,6 +50,8 @@ function Home() {
                     </h3>
                     <div className={styles.productCards}>
                         <ProductCard
+
+                            isKit={false}
                             limit={8}
                             orderBy="varejo_value"
                             orderDirection="desc"
@@ -86,7 +88,7 @@ function Home() {
                         NOSSOS KITS
                     </h3>
                     <div className={styles.productCards}>
-                        <ProductCard orderBy="id" limit={8} orderDirection="desc" />
+                        <ProductCard isKit={true} orderBy="id" limit={8} orderDirection="desc" />
                     </div>
                 </section>
 

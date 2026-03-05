@@ -27,6 +27,7 @@ function ProductCard({
   onlyAvailable = true,
   priceRanges = [],
   brand = [],
+  isKit, // <-- NOVA PROPRIEDADE ADICIONADA AQUI
 }) {
   const [products, setProducts] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -40,6 +41,11 @@ function ProductCard({
         // Disponíveis = 1
         if (onlyAvailable) {
           query = query.eq("disponible", 1);
+        }
+
+        // Filtro por Kit (1 = sim, 0 = não)
+        if (isKit !== undefined && isKit !== null) {
+          query = query.eq("is_kit", isKit ? 1 : 0);
         }
 
         if (category) query = query.eq("category", category);
@@ -118,6 +124,7 @@ function ProductCard({
     orderBy,
     orderDirection,
     onlyAvailable,
+    isKit, // <-- ADICIONADO AO ARRAY DE DEPENDÊNCIAS
     JSON.stringify(priceRanges),
     JSON.stringify(brand),
   ]);
