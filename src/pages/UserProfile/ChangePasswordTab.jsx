@@ -53,7 +53,7 @@ export default function ChangePasswordPage() {
 
       // Busca usuário no Supabase (ajuste a tabela/coluna conforme seu esquema)
       const { data: userData, error: fetchError } = await SupabaseClient
-        .from("DBclients")
+        .from("db_na_clients")
         .select("encrypted_key")
         .eq("id", userSession.id)
         .single();
@@ -69,7 +69,7 @@ export default function ChangePasswordPage() {
       }
 
       const { error: updateError } = await SupabaseClient
-        .from("DBclients")
+        .from("db_na_clients")
         .update({ encrypted_key: newPassword })
         .eq("id", userSession.id);
 

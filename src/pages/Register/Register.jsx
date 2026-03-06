@@ -77,7 +77,7 @@ export default function Register() {
     if (!value) return;
     try {
       const { data, error } = await supabase
-        .from("DBclients")
+        .from("db_na_clients")
         .select("id")
         .eq(field, value)
         .limit(1)
@@ -231,7 +231,7 @@ export default function Register() {
 
     try {
       const { data: existing } = await supabase
-        .from("DBclients")
+        .from("db_na_clients")
         .select("id, email, cpf")
         .or(`cpf.eq.${form.cpf},email.eq.${form.email}`)
         .limit(1)
@@ -248,7 +248,7 @@ export default function Register() {
       return; 
 
       const { data: lastUser } = await supabase
-        .from("DBclients")
+        .from("db_na_clients")
         .select("id")
         .order("id", { ascending: false })
         .limit(1)
@@ -257,7 +257,7 @@ export default function Register() {
       const newId = lastUser ? lastUser.id + 1 : 1;
       const hashedPassword = await bcrypt.hash(form.password, 10);
 
-      const { data, error } = await supabase.from("DBclients").insert([
+      const { data, error } = await supabase.from("db_na_clients").insert([
         {
           id: newId,
           name: form.name,
@@ -314,7 +314,7 @@ export default function Register() {
 
       // Inserir dados no DBclients 
       const { data: lastUser } = await supabase
-        .from("DBclients")
+        .from("db_na_clients")
         .select("id")
         .order("id", { ascending: false })
         .limit(1)
@@ -323,7 +323,7 @@ export default function Register() {
       const newId = lastUser ? lastUser.id + 1 : 1;
       const hashedPassword = await bcrypt.hash(formData.password, 10);
 
-      const { data, error } = await supabase.from("DBclients").insert([
+      const { data, error } = await supabase.from("db_na_clients").insert([
         {
           id: newId,
           name: formData.name,

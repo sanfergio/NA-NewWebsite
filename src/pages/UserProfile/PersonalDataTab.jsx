@@ -213,7 +213,7 @@ export default function PersonalDataTab({ userData, setUserData, supabase }) {
     try {
       // Buscar usuário para verificar senha atual
       const { data: user, error: userError } = await supabase
-        .from("DBclients")
+        .from("db_na_clients")
         .select("encrypted_key")
         .eq("email", email)
         .single();
@@ -243,7 +243,7 @@ export default function PersonalDataTab({ userData, setUserData, supabase }) {
 
       // Atualizar senha no banco
       const { error } = await supabase
-        .from("DBclients")
+        .from("db_na_clients")
         .update({ encrypted_key: hashedNewPassword })
         .eq("email", email);
 
@@ -300,7 +300,7 @@ export default function PersonalDataTab({ userData, setUserData, supabase }) {
 
     // 2 — atualização no banco
     const { error } = await supabase
-      .from("DBclients")
+      .from("db_na_clients")
       .update({
         name: userData.name,
         phone_number: userData.phone_number,

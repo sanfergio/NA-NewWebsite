@@ -1,14 +1,16 @@
-/* ===== Variables ===== */
+/* ProductPage.module.css */
+
+/* ===== Variáveis ===== */
 :root {
-  --red: #000000;
-  --red-dark: #8a1a28;
-  --blue: #2baf5e;
-  --blue-dark: #004080;
-  --gray-100: #f5f5f5;
+  --red: #000000;        /* vermelho vibrante para destaque */
+  --red-dark: #be123c;
+  --blue: #2563eb;
+  --blue-dark: #1d4ed8;
+  --gray-100: #f3f4f6;
   --gray-200: #e5e7eb;
   --gray-400: #9ca3af;
-  --gray-500: #d1d5db;
-  --gray-900: #333333;
+  --gray-500: #6b7280;
+  --gray-900: #111827;
 }
 
 input {
@@ -16,13 +18,16 @@ input {
 }
 
 /* ===== Container ===== */
+body {
+  background-color: whitesmoke;
+}
+
 .container {
   min-height: 100vh;
-  background: var(--gray-100);
   padding: 3rem 1rem;
 }
 
-.container>* {
+.container > * {
   max-width: 72rem;
   margin: 0 auto;
 }
@@ -118,12 +123,13 @@ input {
   flex-direction: column;
   gap: 1.5rem;
   flex: 1;
+  color: black
 }
 
 .info h1 {
   font-size: 1.875rem;
   font-weight: 700;
-  color: var(--gray-900);
+  color: black;
   margin: 0;
   line-height: 1.3;
 }
@@ -139,36 +145,34 @@ input {
 .stars {
   display: flex;
   gap: 0.25rem;
+  align-items: center;
 }
 
-.starFilled,
-.starEmpty {
-  width: 1.25rem;
-  height: 1.25rem;
-}
-
+/* Estrelas cheias */
 .starFilled {
   color: var(--red);
-}
-
-.starEmpty {
-  color: var(--gray-500);
-}
-
-.starHalf {
-  position: relative;
   width: 1.25rem;
   height: 1.25rem;
 }
 
-.starHalf .starEmpty {
-  position: absolute;
+/* Estrelas vazias (apenas contorno) */
+.starEmpty {
+  color: var(--gray-400);
+  width: 1.25rem;
+  height: 1.25rem;
 }
 
-.starHalf .starFilled {
-  position: absolute;
-  width: 50%;
+/* Container para a estrela parcial (metade) */
+.halfStarContainer {
+  display: inline-flex;
+  width: 1.25rem;
+  height: 1.25rem;
   overflow: hidden;
+}
+
+.halfStarContainer .starFilled {
+  width: 100%;
+  height: 100%;
 }
 
 .ratingText {
@@ -196,7 +200,7 @@ input {
   text-decoration: line-through;
 }
 
-/* ===== Shipping ===== */
+/* ===== Shipping (mantido para referência) ===== */
 .shipping {
   border-block: 1px solid var(--gray-200);
   padding: 1.5rem 0;
@@ -304,20 +308,30 @@ input {
 }
 
 .btnCart:hover {
-  background: var(--red-dark);
+  background: white;
+  color: black;
+  outline: 2px solid var(--red);
 }
 
 .btnBuy {
-  background: var(--blue);
+  background: green;
 }
 
 .btnBuy:hover {
-  background: var(--blue-dark);
+  background: black;
 }
 
 /* ===== Details Section ===== */
+
+.dietaryIcons {
+  display: flex;
+  gap: 0.5rem;
+  color: var(--gray-400);
+}
+
 .section {
   margin-bottom: 2rem;
+  color: black
 }
 
 .section:last-child {
@@ -396,6 +410,7 @@ input {
   }
 
   .card {
+    color: black;
     padding: 1.5rem;
     margin-bottom: 1.5rem;
   }
@@ -427,21 +442,20 @@ input {
   .info {
     order: 2;
     gap: 1.25rem;
+    color: black;
   }
 
   .info h1 {
     font-size: 1.5rem;
   }
 
-  .stars,
-  .starFilled,
-  .starEmpty,
-  .starHalf {
-    width: 1.125rem;
-    height: 1.125rem;
+  .rating {
+    gap: 0.35rem;
   }
 
-  .starHalf {
+  .starFilled,
+  .starEmpty,
+  .halfStarContainer {
     width: 1.125rem;
     height: 1.125rem;
   }
@@ -516,5 +530,4 @@ input {
     object-fit: contain;
     height: 15rem;
   }
-
 }

@@ -72,7 +72,7 @@ export default function Login() {
 
     try {
       const { data: user, error } = await supabase
-        .from("DBclients")
+        .from("db_na_clients")
         .select("*")
         .eq("email", formData.email)
         .single();

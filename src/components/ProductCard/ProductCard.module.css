@@ -23,6 +23,11 @@
   box-sizing: border-box;
 }
 
+/* Card de produto */
+.productCard a {
+  text-decoration: none;
+}
+
 /* Mantém todos com a mesma altura em telas grandes */
 @media (min-width: 769px) {
   .productCard {
