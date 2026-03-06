@@ -10,6 +10,9 @@ import CartSidebar from "../CartSideBar/CartSideBar.jsx";
 const supabase = SupabaseClient;
 const STORAGE_KEY = "cart_v1";
 
+// Altere para a rota base onde a página de produto está localizada (ex: "/product", "/produto", etc.)
+const PRODUCT_PAGE_BASE = "/product";
+
 export function currencyBRL(value) {
   return value == null
     ? "-"
@@ -27,7 +30,7 @@ function ProductCard({
   onlyAvailable = true,
   priceRanges = [],
   brand = [],
-  isKit, // <-- NOVA PROPRIEDADE ADICIONADA AQUI
+  isKit, // Filtro por kit (1 = sim, 0 = não)// Permite customizar a base da URL se necessário
 }) {
   const [products, setProducts] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -74,12 +77,16 @@ function ProductCard({
         let mapped = (data || []).map((p) => {
           const price = Number(p.varejo_value) || 0;
 
+          // Constrói a URL do produto usando ID e SKU
+          const productUrl = `produtos?productID=${p.id}&sku=${p.skul || ''}`;
+
           return {
             id: p.id,
+            skul: p.skul, // Incluído para uso na URL
             title: p.name,
             name: p.name,
             price,
-            oldPrice: price * 2,
+            oldPrice: price * 2, // Ajuste conforme regra de negócio
             images: [p.mockup_img, p.flyer_img].filter(Boolean),
             image:
               p.mockup_img ||
@@ -96,7 +103,7 @@ function ProductCard({
             longDesc: p.description || "",
             brand: p.brand,
             freeShipping: true,
-            buyNowUrl: "#",
+            productUrl, // URL para a página do produto
           };
         });
 
@@ -124,9 +131,9 @@ function ProductCard({
     orderBy,
     orderDirection,
     onlyAvailable,
-    isKit, // <-- ADICIONADO AO ARRAY DE DEPENDÊNCIAS
+    isKit,
     JSON.stringify(priceRanges),
-    JSON.stringify(brand),
+    JSON.stringify(brand),// adicionado às dependências
   ]);
 
   const handleAddToCart = (product) => {
@@ -172,7 +179,8 @@ function ProductCard({
                 </span>
               </div>
 
-              <a href={product.buyNowUrl}>
+              {/* Imagem clicável leva à página do produto */}
+              <a href={product.productUrl}>
                 <img
                   src={product.image}
                   alt={product.title}
@@ -181,8 +189,11 @@ function ProductCard({
               </a>
 
               <div className={styles.productInfo}>
+                {/* Título também pode ser um link (opcional) */}
                 <h3 title={product.title} className={styles.productTitle}>
-                  {product.title}
+                  <a href={product.productUrl} className={styles.productLink}>
+                    {product.title}
+                  </a>
                 </h3>
                 <p className={styles.productPrice}>
                   R${product.price.toFixed(2).replace(".", ",")}
@@ -201,8 +212,9 @@ function ProductCard({
                 >
                   ADICIONAR <FaCartShopping />
                 </button>
+                {/* Botão "VER PRODUTO!" agora usa a URL gerada */}
                 <a
-                  href={product.buyNowUrl}
+                  href={product.productUrl}
                   className={`${styles.btn} ${styles.btnBuy}`}
                 >
                   VER PRODUTO!

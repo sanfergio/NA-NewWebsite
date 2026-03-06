@@ -171,24 +171,37 @@ export default function ProductPage() {
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const productID = urlParams.get('productID');
+    const sku = urlParams.get('sku'); // parâmetro opcional
 
     const fetchProduct = async () => {
-      if (!productID) {
+      if (!productID && !sku) {
         setError("Nenhum produto selecionado.");
         setLoading(false);
         return;
       }
 
       try {
-        const { data, error: dbError } = await supabase
-          .from('db_na_products')
-          .select('*')
-          .eq('id', productID)
-          .single();
+        let query = supabase.from('db_na_products').select('*');
+        
+        // Prioriza busca por ID, se disponível
+        if (productID) {
+          query = query.eq('id', productID);
+        } else if (sku) {
+          query = query.eq('skul', sku); // coluna 'skul' no banco
+        }
+
+        const { data, error: dbError } = await query.single();
 
         if (dbError) throw dbError;
         setProduct(data);
         document.title = `New Andrew's | ${data.name}`;
+
+        // Padroniza a URL: garante que ambos os parâmetros estejam presentes
+        const newUrl = new URL(window.location.href);
+        newUrl.searchParams.set('productID', data.id);
+        newUrl.searchParams.set('sku', data.skul);
+        window.history.replaceState({}, '', newUrl);
+
       } catch (err) {
         setError("Não foi possível carregar o produto.");
       } finally {
