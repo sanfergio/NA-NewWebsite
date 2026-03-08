@@ -1,15 +1,21 @@
 /* ReclameAquiSection.module.css */
 
 .section {
-    background: linear-gradient(135deg, #006b3a 0%, #00a459 50%, #00d473 100%);
+    /* Adicionamos um gradiente linear preto com 50% de transparência antes da URL da imagem */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("https://raichu-uploads.s3.amazonaws.com/companypagedetail_9db8743c-b7f2-43b2-81fd-aafc6e1a83b1.png");
+
     padding: 4rem 2rem;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    color: #333;
+    color: #fff;
+    /* Alterado para branco para garantir contraste sobre o fundo escuro */
     display: flex;
     justify-content: center;
-    border-radius: 20px;
     margin-top: 50px;
     margin-bottom: 50px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
 }
 
 .container {
@@ -216,16 +222,21 @@
         overflow-x: auto;
         gap: 1rem;
         margin-bottom: 2rem;
-        padding-bottom: 1rem; /* Espaço para não cortar a sombra e a barra de rolagem */
-        scroll-snap-type: x mandatory; /* Ajuda a "travar" o card na tela ao rolar */
-        -webkit-overflow-scrolling: touch; /* Scroll mais fluido no iOS */
+        padding-bottom: 1rem;
+        /* Espaço para não cortar a sombra e a barra de rolagem */
+        scroll-snap-type: x mandatory;
+        /* Ajuda a "travar" o card na tela ao rolar */
+        -webkit-overflow-scrolling: touch;
+        /* Scroll mais fluido no iOS */
     }
 
     /* Cards Menores */
     .card {
-        flex: 0 0 auto; /* Impede que os cards encolham e quebrem a linha */
-        scroll-snap-align: center; /* Alinha o card no centro ao deslizar */
-        width: 85vw;        
+        flex: 0 0 auto;
+        /* Impede que os cards encolham e quebrem a linha */
+        scroll-snap-align: center;
+        /* Alinha o card no centro ao deslizar */
+        width: 85vw;
         background: white;
         border-radius: 12px;
         padding: 1rem;
@@ -255,8 +266,8 @@
 
     /* Ajuste da section para o mobile */
     .section {
-        background: linear-gradient(135deg, #006b3a 0%, #00a459 50%, #00d473 100%);
-        padding: 3rem 1rem; /* Diminuí o padding lateral para ganhar espaço na tela */
+        padding: 3rem 1rem;
+        /* Diminuí o padding lateral para ganhar espaço na tela */
         font-family: 'Inter', system-ui, -apple-system, sans-serif;
         color: #333;
         display: flex;
@@ -265,7 +276,9 @@
         width: 100%;
         /* Importante para que o scroll horizontal funcione sem quebrar o layout da página */
         max-width: 100vw;
-        overflow: hidden; 
+        overflow: hidden;
+        background-size: cover;
+        background-position: left top;
     }
 }
 
@@ -274,6 +287,7 @@
     .cardsGrid::-webkit-scrollbar {
         display: none;
     }
+
     .cardsGrid {
         -ms-overflow-style: none;
         scrollbar-width: none;

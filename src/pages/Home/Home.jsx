@@ -43,19 +43,12 @@ function Home() {
                     </h2>
                 </section>
 
-                {/* Mais vendidos */}
-                <section aria-labelledby="mais-vendidos-titulo">
-                    <h3 id="mais-vendidos-titulo" style={{ color: '#000000', fontSize: '25px' }}>
-                        MAIS VENDIDOS
-                    </h3>
+                {/* Novidades */}
+                <h3 id="novidades-titulo" style={{ color: '#000000', fontSize: '25px' }}>
+                    MAIS VENDIDOS                </h3>
+                <section aria-labelledby="novidades-titulo">
                     <div className={styles.productCards}>
-                        <ProductCard
-
-                            isKit={false}
-                            limit={8}
-                            orderBy="varejo_value"
-                            orderDirection="desc"
-                        />
+                        <ProductCard isKit={false} orderBy="id" limit={8} orderDirection="desc" />
                     </div>
                 </section>
 
@@ -83,10 +76,10 @@ function Home() {
 
 
                 {/* Novidades */}
+                <h3 id="novidades-titulo" style={{ color: '#000000', fontSize: '25px' }}>
+                    NOSSOS KITS
+                </h3>
                 <section aria-labelledby="novidades-titulo">
-                    <h3 id="novidades-titulo" style={{ color: '#000000', fontSize: '25px' }}>
-                        NOSSOS KITS
-                    </h3>
                     <div className={styles.productCards}>
                         <ProductCard isKit={true} orderBy="id" limit={8} orderDirection="desc" />
                     </div>

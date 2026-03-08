@@ -24,8 +24,7 @@
 }
 
 .productCards {
-  width: auto;
-  max-width: 88vw;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   /* Permite múltiplas linhas */
@@ -184,12 +183,7 @@
 }
 
 @media (max-width: 1150px) {
-  .productCards {
-    width: 95vw;
-    display: flex;
-    justify-content: center;
-    align-items: center
-  }
+
 
   .carousel {
     width: 100vw;

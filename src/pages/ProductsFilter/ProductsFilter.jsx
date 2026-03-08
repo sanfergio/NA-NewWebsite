@@ -11,22 +11,54 @@ export default function ProductsFilter() {
   const urlParams = new URLSearchParams(window.location.search);
   const categoryParam = urlParams.get("categoria");
 
-  // URL → nome exibido
-  const categoryMap = {
-    vitamins: "Vitaminas",
-    pre_workout: "Pré-Treino",
-    amino_acids: "Aminoácidos",
-    thermogenics: "Termogênicos",
-    personal_care: "Cuidados Pessoais",
-    oils: "Óleos",
-    coenzymes: "Coenzimas",
-    female: "Linha Feminina",
-    masculine: "Linha Masculina",
+  // Dados completos das categorias: Nome e Benefícios
+  const categoryData = {
+    vitamins: {
+      label: "Vitaminas",
+      desc: "Essenciais para o bom funcionamento do corpo, as vitaminas fortalecem o sistema imunológico, melhoram a saúde da pele e cabelos, e auxiliam na produção de energia celular diária.",
+    },
+    pre_workout: {
+      label: "Pré-Treino",
+      desc: "Desenvolvidos para aumentar a disposição, foco mental e resistência. Ideais para superar seus limites e extrair o máximo de performance durante os exercícios físicos.",
+    },
+    amino_acids: {
+      label: "Aminoácidos",
+      desc: "Os blocos construtores das proteínas. Aceleram a recuperação muscular, previnem a perda de massa magra e são fundamentais para a hipertrofia.",
+    },
+    thermogenics: {
+      label: "Termogênicos",
+      desc: "Aceleram o metabolismo e aumentam a temperatura corporal, favorecendo a queima de gordura e transformando-a em energia explosiva para o seu dia a dia.",
+    },
+    personal_care: {
+      label: "Cuidados Pessoais",
+      desc: "Produtos formulados para o bem-estar externo e interno, promovendo saúde, higiene e beleza com a qualidade que seu corpo merece.",
+    },
+    oils: {
+      label: "Óleos",
+      desc: "Fontes de gorduras boas, como o Ômega 3. Essenciais para a saúde cardiovascular, otimização da função cerebral e controle de inflamações no organismo.",
+    },
+    coenzymes: {
+      label: "Coenzimas",
+      desc: "Poderosos antioxidantes que atuam diretamente na produção de energia das células, retardando o envelhecimento precoce e melhorando a vitalidade geral.",
+    },
+    female: {
+      label: "Linha Feminina",
+      desc: "Suplementação pensada especificamente para as necessidades do corpo feminino, auxiliando no equilíbrio hormonal, estética da pele e saúde óssea.",
+    },
+    masculine: {
+      label: "Linha Masculina",
+      desc: "Fórmulas otimizadas para o metabolismo masculino, focadas em suporte de testosterona, ganho expressivo de força, resistência e vitalidade diária.",
+    },
   };
 
-  const categoryLabel = categoryMap[categoryParam] || "Todos os Produtos";
+  const currentCategory = categoryData[categoryParam];
+  const categoryLabel = currentCategory ? currentCategory.label : "Todas as Categorias";
 
-  // ---------- PREÇO ----------
+  // ---------- ESTADOS DE LOADING E FILTROS ----------
+  const [isSimulatingLoad, setIsSimulatingLoad] = useState(false);
+  const [selectedRanges, setSelectedRanges] = useState(new Set());
+  const [orderValue, setOrderValue] = useState("relevance");
+
   const priceOptions = [
     { id: "0-50", label: "Até R$50", min: 0, max: 50 },
     { id: "50-100", label: "R$50 - R$100", min: 50, max: 100 },
@@ -34,14 +66,26 @@ export default function ProductsFilter() {
     { id: "200+", label: "Acima de R$200", min: 200, max: null },
   ];
 
-  const [selectedRanges, setSelectedRanges] = useState(new Set());
+  // Função para simular o loading ao interagir
+  const triggerLoading = () => {
+    setIsSimulatingLoad(true);
+    setTimeout(() => {
+      setIsSimulatingLoad(false);
+    }, 600); // 600ms de animação fluida
+  };
 
   const toggleRange = (id) => {
+    triggerLoading();
     setSelectedRanges((prev) => {
       const next = new Set(prev);
       next.has(id) ? next.delete(id) : next.add(id);
       return next;
     });
+  };
+
+  const handleOrderChange = (e) => {
+    triggerLoading();
+    setOrderValue(e.target.value);
   };
 
   const activePriceRanges = Array.from(selectedRanges)
@@ -50,8 +94,6 @@ export default function ProductsFilter() {
     .map((p) => ({ min: p.min, max: p.max }));
 
   // ---------- ORDENAÇÃO ----------
-  const [orderValue, setOrderValue] = useState("relevance");
-
   let orderBy;
   let orderDirection;
 
@@ -68,9 +110,9 @@ export default function ProductsFilter() {
 
   // ---------- TITLE / SEO ----------
   useEffect(() => {
-    const title = categoryLabel
+    const title = categoryParam
       ? `New Andrew's | ${categoryLabel}`
-      : "New Andrew's Suplementos";
+      : "New Andrew's Suplementos | Categorias";
 
     document.title = title;
 
@@ -81,7 +123,7 @@ export default function ProductsFilter() {
       document.head.appendChild(og);
     }
     og.setAttribute("content", title);
-  }, [categoryLabel]);
+  }, [categoryLabel, categoryParam]);
 
   return (
     <>
@@ -91,51 +133,88 @@ export default function ProductsFilter() {
 
       <div className={styles.produtosContainer}>
         <div className={styles.breadcrumb}>
-          <span>Início → Categorias → {categoryLabel}</span>
+          <span> <a href="./"> Início </a> → <a href="/categorias">Categorias</a> {categoryParam && `→ ${categoryLabel}`}</span>
         </div>
 
-        <div className={styles.filtro}>
-          <h1 className={styles.tituloPagina}>{categoryLabel}</h1>
-
-          <div className={styles.ordenacao}>
-            <label>Ordenar por</label>
-            <select value={orderValue} onChange={(e) => setOrderValue(e.target.value)}>
-              <option value="relevance">Relevância</option>
-              <option value="price-asc">Menor preço</option>
-              <option value="price-desc">Maior preço</option>
-            </select>
-          </div>
-        </div>
-
-        <div className={styles.produtosLayout}>
-          {/* FILTROS */}
-          <aside className={styles.filtros}>
-            <div className={styles.filtroGrupo}>
-              <h4>Preço</h4>
-              {priceOptions.map((opt) => (
-                <label key={opt.id}>
-                  <input
-                    type="checkbox"
-                    checked={selectedRanges.has(opt.id)}
-                    onChange={() => toggleRange(opt.id)}
-                  />
-                  {opt.label}
-                </label>
+        {/* SE NÃO HOUVER PARÂMETRO NA URL, MOSTRA O GRID DE CATEGORIAS */}
+        {!categoryParam ? (
+          <div className={styles.todasCategoriasContainer}>
+            <h1 className={styles.tituloPagina}>Nossas Categorias</h1>
+            <p className={styles.subtituloPagina}>
+              Encontre o suplemento ideal para o seu objetivo e transforme sua rotina com a New Andrew's.
+            </p>
+            <div className={styles.categoriesGrid}>
+              {Object.entries(categoryData).map(([key, data]) => (
+                <a href={`?categoria=${key}`} key={key} className={styles.categoryCard}>
+                  <h3>{data.label}</h3>
+                  <p>{data.desc}</p>
+                  <span className={styles.verProdutosBtn}>Ver produtos →</span>
+                </a>
               ))}
             </div>
-          </aside>
-
-          {/* PRODUTOS */}
-          <div className={styles.produtosPrincipal}>
-            <ProductCard
-              category={categoryParam}
-              priceRanges={activePriceRanges}
-              orderBy={orderBy}
-              orderDirection={orderDirection}
-              brand={["New Andrew's Suplementos"]}
-            />
           </div>
-        </div>
+        ) : (
+          /* SE HOUVER PARÂMETRO, MOSTRA O LAYOUT DE PRODUTOS E FILTROS */
+          <>
+            <div className={styles.filtro}>
+              <h1 className={styles.tituloPagina}>{categoryLabel}</h1>
+
+              <div className={styles.ordenacao}>
+                <label>Ordenar por</label>
+                <select value={orderValue} onChange={handleOrderChange}>
+                  <option value="relevance">Relevância</option>
+                  <option value="price-asc">Menor preço</option>
+                  <option value="price-desc">Maior preço</option>
+                </select>
+              </div>
+            </div>
+
+            {/* Texto Descritivo da Categoria */}
+            {currentCategory && (
+              <div className={styles.categoriaDescricao}>
+                <p>{currentCategory.desc}</p>
+              </div>
+            )}
+
+            <div className={styles.produtosLayout}>
+              {/* FILTROS (Fixo na lateral) */}
+              <aside className={styles.filtros}>
+                <div className={styles.filtroGrupo}>
+                  <h4>Preço</h4>
+                  {priceOptions.map((opt) => (
+                    <label key={opt.id} className={styles.checkboxLabel}>
+                      <input
+                        type="checkbox"
+                        checked={selectedRanges.has(opt.id)}
+                        onChange={() => toggleRange(opt.id)}
+                      />
+                      <span className={styles.customCheckbox}></span>
+                      {opt.label}
+                    </label>
+                  ))}
+                </div>
+              </aside>
+
+              <div className={styles.produtosArea}>
+                {/* PRODUTOS COM ANIMAÇÃO DE LOADING */}
+                <div
+                  className={`${styles.produtosWrapper} ${isSimulatingLoad ? styles.loadingAtivo : ""
+                    }`}
+                >
+                  {isSimulatingLoad && (
+                    <div className={styles.loaderSpinner}></div>
+                  )}
+                  <ProductCard
+                    category={categoryParam}
+                    priceRanges={activePriceRanges}
+                    orderBy={orderBy}
+                    orderDirection={orderDirection}
+                  />
+                </div>
+              </div>
+            </div>
+          </>
+        )}
       </div>
 
       <Footer />
