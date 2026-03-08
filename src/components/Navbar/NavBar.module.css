@@ -52,16 +52,16 @@
 @media (max-width: 1150px) {
 
     .nav {
-        background-color: #ffffff;
+        background-color: #000000;
         height: auto;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         display: flex;
         align-items: center;
         justify-content: space-evenly;
-        color: black;
+        color: white;
         width: 100%;
         height: auto;
-        padding: 15px 0;
+        padding: 10px;
     }
 
     .cardNavbar {
@@ -72,9 +72,8 @@
         text-align: center;
         width: 60px;
         height: 60px;
-        background: black;
         cursor: pointer;
-        color: white;
+        color: black;
         border-radius: 50%;
         text-decoration: none;
         transition: 0.3s;
@@ -96,16 +95,4 @@
         background: #333;
     }
 
-    .nav {
-        background-color: #ffff;
-        height: auto;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        gap: 0px;
-        color: rgb(255, 255, 255);
-        width: 100%;
-        height: auto;
-    }
 }

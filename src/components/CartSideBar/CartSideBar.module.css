@@ -1,9 +1,9 @@
 .cartSidebar {
   position: fixed;
   top: 0;
-  right: -380px;
+  right: -10080px;
   width: 380px;
-  height: 100vh;
+  height: 100%;
   background-color: #000000;
   box-shadow: -3px 0 6px rgba(0, 0, 0, 0.4);
   padding: 25px;

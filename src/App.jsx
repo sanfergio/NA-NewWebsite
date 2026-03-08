@@ -22,6 +22,10 @@ import ProductPage from './pages/ProductPage/ProductPage.jsx'
 import BrandsFilter from './pages/BrandsFilter/BrandsFilter.jsx';
 import RememberPassword from './components/RememberPassword/RememberPassword.jsx';
 import ChangePassword from './pages/UserProfile/ChangePasswordTab.jsx';
+import Kits from './pages/Kits/ProductsFilter.jsx';
+import Ofertas from './pages/Ofertas/ProductsFilter.jsx';
+import Atacado from './pages/Atacado/Atacado.jsx';
+import Objetivos from './pages/Objetivos/ProductsFilter.jsx';
 
 // --- PÁGINAS DE CARRINHO E CHECKOUT ---
 // Componentes relacionados ao carrinho de compras e processo de checkout
@@ -60,6 +64,10 @@ function App() {
         <Route path="/marca/:nomeMarca" element={<BrandsFilter />} />
         <Route path="/esqueci-minha-senha" element={<RememberPassword />} />
         <Route path="/trocar-senha" element={<ChangePassword />} />
+        <Route path="/kits" element={<Kits />} />
+        <Route path="/ofertas" element={<Ofertas />} />
+        <Route path="/atacados" element={<Atacado />} />
+        <Route path="/objetivos" element={<Objetivos />} />
 
 
         {/* Rotas de Políticas e Termos */}

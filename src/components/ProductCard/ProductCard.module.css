@@ -18,12 +18,12 @@
   width: 19vw;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between; /* Distribui melhor os itens se a altura variar */
   transition: transform 0.2s ease;
   box-sizing: border-box;
 }
 
-/* Card de produto */
+/* Links sem formatação padrão */
 .productCard a {
   text-decoration: none;
 }
@@ -51,12 +51,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 0.85rem;
 }
 
 /* Imagem */
 .productImage {
   width: 100%;
-  height: 80px;
+  height: 120px; /* Aumentado ligeiramente para melhor visualização */
   object-fit: contain;
   margin: 0 auto 1rem;
 }
@@ -64,6 +65,9 @@
 /* Texto e preço */
 .productInfo {
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .productTitle {
@@ -82,6 +86,7 @@
   color: #179c4a;
   font-weight: bold;
   font-size: 1.3rem;
+  margin: 0.5rem 0;
 }
 
 .productOldPrice {
@@ -94,7 +99,6 @@
 .discountPix {
   font-size: 0.75rem;
   color: #333;
-  display: block;
   text-align: center;
   display: flex;
   align-items: center;
@@ -106,6 +110,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  margin-top: 1rem;
 }
 
 /* Botões */
@@ -119,6 +124,11 @@
   color: white;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .btnCart {
@@ -146,133 +156,85 @@
 
 /* 🔁 --- RESPONSIVIDADE --- 🔁 */
 
-/* 💻 Telas médias (ex: tablets em pé) - 2 cards por linha */
-@media (max-width: 1150px) {
-  .responsiveFont {
-    font-size: 95%;
+/* Laptops e Desktops menores */
+@media (max-width: 1200px) {
+  .productCard {
+    width: 23vw; /* Aproximadamente 4 por linha */
   }
+}
 
+/* Tablets em modo paisagem */
+@media (max-width: 992px) {
+  .productCard {
+    width: 30vw; /* Aproximadamente 3 por linha */
+  }
+}
+
+/* Tablets em modo retrato e Smartphones grandes */
+@media (max-width: 768px) {
   .productsContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.2rem;
+    gap: 1rem;
     padding: 0.5rem;
-    align-items: stretch;
   }
 
   .productCard {
-    border: 2px solid #cfcfcf;
-    border-radius: 8px;
-    padding: 0.8rem;
-    text-align: center;
-    background-color: #fff;
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transition: transform 0.2s ease;
-    box-sizing: border-box;
-    height: auto;
+    width: calc(50% - 0.5rem); /* 2 por linha cravados */
+    padding: 0.75rem;
+    height: auto; /* Deixa o card crescer conforme o conteúdo */
   }
 
-  .productCard:hover {
-    transform: scale(1.02);
-  }
-
-  .freeShipping {
-    background-color: #000000;
-    color: white;
-    padding: 0.5rem;
-    font-weight: bold;
-    border-radius: 6px;
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .productImage {
-    width: 100%;
-    height: 80px;
-    object-fit: contain;
-    margin: 0 auto 1rem;
-  }
-
-  .productInfo {
-    flex-grow: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-
+  /* Ajusta o título para quebrar linha em telas menores e não cortar seco */
   .productTitle {
-    font-size: 0.9rem;
-    font-weight: bold;
-    color: #333;
-    white-space: nowrap;
-    display: inline-block;
-    max-width: 100%;
+    font-size: 0.85rem;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limita a 2 linhas */
+    -webkit-box-orient: vertical;
     overflow: hidden;
-    text-overflow: ellipsis;
-    margin: 0.5rem 0;
   }
 
   .productPrice {
-    color: #179c4a;
-    font-weight: bold;
-    font-size: 1.3rem;
-    width: 100%;
+    font-size: 1.15rem;
     display: flex;
+    flex-direction: column; /* Joga o preço antigo para baixo */
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    gap: 0.2rem;
   }
 
   .productOldPrice {
-    font-size: 0.9rem;
-    color: #777;
-    text-decoration: line-through;
-    margin-left: 0.5rem;
-    width: 100%;
-  }
-
-  .discountPix {
-    font-size: 0.75rem;
-    color: #333;
-    display: block;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .productActions {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    margin-left: 0;
+    font-size: 0.8rem;
   }
 
   .btn {
-    padding: 0.6rem;
-    text-transform: uppercase;
-    font-weight: bold;
-    border: none;
-    border-radius: 6px;
-    text-decoration: none;
-    color: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 0.85rem;
+    padding: 0.5rem;
+    font-size: 0.8rem; /* Reduz levemente a fonte do botão */
   }
 
-  .btnCart {
-    background-color: #000000;
+  .freeShipping {
+    font-size: 0.7rem; /* Reduz a tag de frete grátis */
+    padding: 0.4rem;
+  }
+}
+
+/* Smartphones pequenos */
+@media (max-width: 480px) {
+  .productsContainer {
+    gap: 0.5rem; /* Aperta um pouco mais o layout para ganhar espaço de tela */
+    padding: 0.25rem;
   }
 
-  .btnBuy {
-    background-color: #2baf5e;
+  .productCard {
+    width: calc(50% - 0.25rem); /* Mantém 2 por linha com gap menor */
+    padding: 0.5rem;
   }
 
+  .productImage {
+    height: 100px; /* Reduz a imagem para não ocupar a tela toda */
+  }
+
+  .btn {
+    font-size: 0.75rem; /* Ajuste final para botões não quebrarem o layout */
+    padding: 0.4rem;
+  }
 }

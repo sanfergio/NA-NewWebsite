@@ -1,58 +1,52 @@
 import React, { useState, useEffect } from "react";
 import ProductCard from "../../components/ProductCard/ProductCard";
-import styles from "./ProductsFilter.module.css";
+import styles from "./Objetivos.module.css";
 import Footer from "../../components/Footer/Footer.jsx";
 import NavBar from "../../components/Navbar/NavBar.jsx";
 import HomeButton from "../../components/HomeButton.jsx";
 import Header from "../../components/Header/Header.jsx";
 import WhatsAppButton from "../../components/WhatsappButton.jsx";
 
-export default function ProductsFilter() {
+export default function Objetivos() {
   const urlParams = new URLSearchParams(window.location.search);
-  const categoryParam = urlParams.get("categoria");
+  const objetivoParam = urlParams.get("objetivo");
 
-  // Dados completos das categorias: Nome e Benefícios
-  const categoryData = {
-    vitamins: {
-      label: "Vitaminas",
-      desc: "Essenciais para o bom funcionamento do corpo, as vitaminas fortalecem o sistema imunológico, melhoram a saúde da pele e cabelos, e auxiliam na produção de energia celular diária.",
+  // Dados completos dos objetivos: Nome, Descrição e Imagem
+  const objetivosData = {
+    "bem-estar": {
+      label: "Bem-estar",
+      desc: "Produtos que promovem equilíbrio físico e mental, auxiliando no relaxamento, redução do estresse e melhora da qualidade de vida.",
+      imageUrl: "https://github.com/sanfergio/NA-NewWebsite/blob/master/src/public/mock-images/bem-estar.png?raw=true"
     },
-    pre_workout: {
-      label: "Pré-Treino",
-      desc: "Desenvolvidos para aumentar a disposição, foco mental e resistência. Ideais para superar seus limites e extrair o máximo de performance durante os exercícios físicos.",
+    "ganho-massa": {
+      label: "Ganho de massa",
+      desc: "Suplementos para potencializar o ganho de massa muscular, com proteínas, creatina e aminoácidos essenciais para a hipertrofia.",
+      imageUrl: "https://github.com/sanfergio/NA-NewWebsite/blob/master/src/public/mock-images/muscular.png?raw=true"
     },
-    amino_acids: {
-      label: "Aminoácidos",
-      desc: "Os blocos construtores das proteínas. Aceleram a recuperação muscular, previnem a perda de massa magra e são fundamentais para a hipertrofia.",
+    "emagrecimento": {
+      label: "Emagrecimento",
+      desc: "Fórmulas que aceleram o metabolismo, controlam o apetite e auxiliam na queima de gordura de forma saudável e sustentável.",
+      imageUrl: "https://github.com/sanfergio/NA-NewWebsite/blob/master/src/public/mock-images/emagrecimento.png?raw=true"
     },
-    thermogenics: {
-      label: "Termogênicos",
-      desc: "Aceleram o metabolismo e aumentam a temperatura corporal, favorecendo a queima de gordura e transformando-a em energia explosiva para o seu dia a dia.",
+    "melhor-sono": {
+      label: "Melhor sono",
+      desc: "Ativos que induzem o relaxamento, regulam o ciclo circadiano e promovem um sono profundo e reparador.",
+      imageUrl: "https://github.com/sanfergio/NA-NewWebsite/blob/master/src/public/mock-images/sono.png?raw=true"
     },
-    personal_care: {
-      label: "Cuidados Pessoais",
-      desc: "Produtos formulados para o bem-estar externo e interno, promovendo saúde, higiene e beleza com a qualidade que seu corpo merece.",
+    "libido": {
+      label: "++ Libido",
+      desc: "Suplementos que estimulam a libido, melhoram a performance sexual e equilibram os hormônios naturalmente.",
+      imageUrl: "https://github.com/sanfergio/NA-NewWebsite/blob/master/src/public/mock-images/libido.png?raw=true"
     },
-    oils: {
-      label: "Óleos",
-      desc: "Fontes de gorduras boas, como o Ômega 3. Essenciais para a saúde cardiovascular, otimização da função cerebral e controle de inflamações no organismo.",
-    },
-    coenzymes: {
-      label: "Coenzimas",
-      desc: "Poderosos antioxidantes que atuam diretamente na produção de energia das células, retardando o envelhecimento precoce e melhorando a vitalidade geral.",
-    },
-    female: {
-      label: "Linha Feminina",
-      desc: "Suplementação pensada especificamente para as necessidades do corpo feminino, auxiliando no equilíbrio hormonal, estética da pele e saúde óssea.",
-    },
-    masculine: {
-      label: "Linha Masculina",
-      desc: "Fórmulas otimizadas para o metabolismo masculino, focadas em suporte de testosterona, ganho expressivo de força, resistência e vitalidade diária.",
-    },
+    "disposicao": {
+      label: "++ Disposição",
+      desc: "Energia e vitalidade para o dia a dia, com compostos que combatem o cansaço físico e mental e aumentam o foco.",
+      imageUrl: "https://github.com/sanfergio/NA-NewWebsite/blob/master/src/public/mock-images/energia.png?raw=true"
+    }
   };
 
-  const currentCategory = categoryData[categoryParam];
-  const categoryLabel = currentCategory ? currentCategory.label : "Todas as Categorias";
+  const currentObjetivo = objetivosData[objetivoParam];
+  const objetivoLabel = currentObjetivo ? currentObjetivo.label : "Todos os Objetivos";
 
   // ---------- ESTADOS DE LOADING E FILTROS ----------
   const [isSimulatingLoad, setIsSimulatingLoad] = useState(false);
@@ -110,9 +104,9 @@ export default function ProductsFilter() {
 
   // ---------- TITLE / SEO ----------
   useEffect(() => {
-    const title = categoryParam
-      ? `New Andrew's | ${categoryLabel}`
-      : "New Andrew's Suplementos | Categorias";
+    const title = objetivoParam
+      ? `New Andrew's | ${objetivoLabel}`
+      : "New Andrew's Suplementos | Objetivos";
 
     document.title = title;
 
@@ -123,7 +117,7 @@ export default function ProductsFilter() {
       document.head.appendChild(og);
     }
     og.setAttribute("content", title);
-  }, [categoryLabel, categoryParam]);
+  }, [objetivoLabel, objetivoParam]);
 
   return (
     <>
@@ -133,19 +127,27 @@ export default function ProductsFilter() {
 
       <div className={styles.produtosContainer}>
         <div className={styles.breadcrumb}>
-          <span> <a href="./"> Início </a> → <a href="/categorias">Categorias</a> {categoryParam && `→ ${categoryLabel}`}</span>
+          <span>
+            <a href="./">Início</a> → <a href="/objetivos">Objetivos</a>{" "}
+            {objetivoParam && `→ ${objetivoLabel}`}
+          </span>
         </div>
 
-        {/* SE NÃO HOUVER PARÂMETRO NA URL, MOSTRA O GRID DE CATEGORIAS */}
-        {!categoryParam ? (
+        {/* SE NÃO HOUVER PARÂMETRO NA URL, MOSTRA O GRID DE OBJETIVOS */}
+        {!objetivoParam ? (
           <div className={styles.todasCategoriasContainer}>
-            <h1 className={styles.tituloPagina}>Nossas Categorias</h1>
+            <h1 className={styles.tituloPagina}>Escolha seu objetivo</h1>
             <p className={styles.subtituloPagina}>
-              Encontre o suplemento ideal para o seu objetivo e transforme sua rotina com a New Andrew's.
+              Selecione o que você deseja alcançar e encontre os produtos ideais para transformar seus resultados.
             </p>
             <div className={styles.categoriesGrid}>
-              {Object.entries(categoryData).map(([key, data]) => (
-                <a href={`?categoria=${key}`} key={key} className={styles.categoryCard}>
+              {Object.entries(objetivosData).map(([key, data]) => (
+                <a href={`?objetivo=${key}`} key={key} className={styles.categoryCard}>
+                  <img
+                    src={data.imageUrl}
+                    alt={data.label}
+                    style={{ width: "100%", maxHeight: "150px", objectFit: "contain", marginBottom: "15px" }}
+                  />
                   <h3>{data.label}</h3>
                   <p>{data.desc}</p>
                   <span className={styles.verProdutosBtn}>Ver produtos →</span>
@@ -157,7 +159,7 @@ export default function ProductsFilter() {
           /* SE HOUVER PARÂMETRO, MOSTRA O LAYOUT DE PRODUTOS E FILTROS */
           <>
             <div className={styles.filtro}>
-              <h1 className={styles.tituloPagina}>{categoryLabel}</h1>
+              <h1 className={styles.tituloPagina}>{objetivoLabel}</h1>
 
               <div className={styles.ordenacao}>
                 <label>Ordenar por</label>
@@ -169,10 +171,10 @@ export default function ProductsFilter() {
               </div>
             </div>
 
-            {/* Texto Descritivo da Categoria */}
-            {currentCategory && (
+            {/* Texto Descritivo do Objetivo */}
+            {currentObjetivo && (
               <div className={styles.categoriaDescricao}>
-                <p>{currentCategory.desc}</p>
+                <p>{currentObjetivo.desc}</p>
               </div>
             )}
 
@@ -198,14 +200,15 @@ export default function ProductsFilter() {
               <div className={styles.produtosArea}>
                 {/* PRODUTOS COM ANIMAÇÃO DE LOADING */}
                 <div
-                  className={`${styles.produtosWrapper} ${isSimulatingLoad ? styles.loadingAtivo : ""
-                    }`}
+                  className={`${styles.produtosWrapper} ${
+                    isSimulatingLoad ? styles.loadingAtivo : ""
+                  }`}
                 >
                   {isSimulatingLoad && (
                     <div className={styles.loaderSpinner}></div>
                   )}
                   <ProductCard
-                    category={categoryParam}
+                    // objetivo={objetivoParam} // adapte conforme a prop esperada pelo seu ProductCard
                     priceRanges={activePriceRanges}
                     orderBy={orderBy}
                     orderDirection={orderDirection}

@@ -1,0 +1,99 @@
+/* Estilos para a página de Atacado */
+.atacadoContainer {
+  max-width: 800px;
+  margin: 40px auto;
+  text-align: center;
+  background-color: var(--na-white);
+  padding: 40px 30px;
+  border-radius: 30px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+  border: 1px solid var(--na-gray-border);
+}
+
+.avisoIndisponivel {
+  margin: 30px 0;
+}
+
+.iconeAviso {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.avisoIndisponivel h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--na-black);
+  margin-bottom: 20px;
+}
+
+.avisoIndisponivel p {
+  font-size: 1.1rem;
+  color: var(--na-text-gray);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.botaoWhatsApp {
+  display: inline-block;
+  background-color: #25D366; /* verde do WhatsApp */
+  color: white;
+  font-weight: 600;
+  padding: 15px 40px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  margin-top: 20px;
+  transition: background-color 0.3s ease, transform 0.2s;
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+}
+
+.botaoWhatsApp:hover {
+  background-color: #20b859;
+  transform: scale(1.05);
+}
+
+.botaoVoltarContainer {
+  margin-top: 40px;
+}
+
+.botaoVoltar {
+  background: transparent;
+  border: 2px solid var(--na-green);
+  color: var(--na-green);
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.botaoVoltar:hover {
+  background-color: var(--na-green);
+  color: white;
+}
+
+/* Ajustes mobile */
+@media (max-width: 768px) {
+  .atacadoContainer {
+    padding: 30px 20px;
+    margin: 20px auto;
+  }
+
+  .avisoIndisponivel h2 {
+    font-size: 1.6rem;
+  }
+
+  .avisoIndisponivel p {
+    font-size: 1rem;
+  }
+
+  .botaoWhatsApp {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+}
