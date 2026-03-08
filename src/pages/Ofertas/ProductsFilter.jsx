@@ -7,7 +7,7 @@ import HomeButton from "../../components/HomeButton.jsx";
 import Header from "../../components/Header/Header.jsx";
 import WhatsAppButton from "../../components/WhatsappButton.jsx";
 
-export default function Kits() {
+export default function Ofertas() {
   // ---------- ESTADOS DE LOADING E FILTROS ----------
   const [isSimulatingLoad, setIsSimulatingLoad] = useState(false);
   const [selectedRanges, setSelectedRanges] = useState(new Set());
@@ -20,7 +20,6 @@ export default function Kits() {
     { id: "200+", label: "Acima de R$200", min: 200, max: null },
   ];
 
-  // Função para simular o loading ao interagir
   const triggerLoading = () => {
     setIsSimulatingLoad(true);
     setTimeout(() => {
@@ -47,10 +46,8 @@ export default function Kits() {
     .filter(Boolean)
     .map((p) => ({ min: p.min, max: p.max }));
 
-  // ---------- ORDENAÇÃO ----------
-  let orderBy;
-  let orderDirection;
-
+  // Mapeia a opção de ordenação para os parâmetros que serão passados ao ProductCard
+  let orderBy, orderDirection;
   if (orderValue === "price-asc") {
     orderBy = "varejo_value";
     orderDirection = "asc";
@@ -64,7 +61,7 @@ export default function Kits() {
 
   // ---------- TITLE / SEO ----------
   useEffect(() => {
-    const title = "New Andrew's | Kits";
+    const title = "New Andrew's | Ofertas";
     document.title = title;
 
     let og = document.querySelector('meta[property="og:title"]');
@@ -84,12 +81,12 @@ export default function Kits() {
 
       <div className={styles.produtosContainer}>
         <div className={styles.breadcrumb}>
-          <span>Início → <a href="/kits">Kits</a></span>
+          <span>Início → <a href="/promocoes">Promoções</a></span>
         </div>
 
-        {/* LAYOUT DE PRODUTOS E FILTROS */}
+        {/* CABEÇALHO DA PÁGINA */}
         <div className={styles.filtro}>
-          <h1 className={styles.tituloPagina}>Kits</h1>
+          <h1 className={styles.tituloPagina}>Promoções</h1>
 
           <div className={styles.ordenacao}>
             <label>Ordenar por</label>
@@ -101,16 +98,16 @@ export default function Kits() {
           </div>
         </div>
 
-        {/* Texto Descritivo da Seção de Kits */}
+        {/* DESCRIÇÃO DA SEÇÃO */}
         <div className={styles.categoriaDescricao}>
           <p>
-            Kits completos pensados para potencializar seus resultados.
-            Economia e performance em um só lugar.
+            🔥 Os <strong>15 produtos mais baratos</strong> do nosso estoque!
+            Aproveite preços imperdíveis para turbinar seus resultados.
           </p>
         </div>
 
         <div className={styles.produtosLayout}>
-          {/* FILTROS (Fixo na lateral) */}
+          {/* FILTROS LATERAIS (PREÇO) */}
           <aside className={styles.filtros}>
             <div className={styles.filtroGrupo}>
               <h4>Preço</h4>
@@ -129,7 +126,7 @@ export default function Kits() {
           </aside>
 
           <div className={styles.produtosArea}>
-            {/* PRODUTOS COM ANIMAÇÃO DE LOADING */}
+            {/* PRODUTOS COM LOADING SIMULADO */}
             <div
               className={`${styles.produtosWrapper} ${
                 isSimulatingLoad ? styles.loadingAtivo : ""
@@ -138,12 +135,14 @@ export default function Kits() {
               {isSimulatingLoad && (
                 <div className={styles.loaderSpinner}></div>
               )}
+
               <ProductCard
-                isKit={true} // Filtra apenas produtos que são kits
                 priceRanges={activePriceRanges}
                 orderBy={orderBy}
-                orderDirection={orderDirection}
+                orderDirection="asc"
+                limit={15}
               />
+
             </div>
           </div>
         </div>

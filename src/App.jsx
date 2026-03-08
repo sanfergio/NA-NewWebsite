@@ -23,6 +23,7 @@ import BrandsFilter from './pages/BrandsFilter/BrandsFilter.jsx';
 import RememberPassword from './components/RememberPassword/RememberPassword.jsx';
 import ChangePassword from './pages/UserProfile/ChangePasswordTab.jsx';
 import Kits from './pages/Kits/ProductsFilter.jsx';
+import Ofertas from './pages/Ofertas/ProductsFilter.jsx';
 
 // --- PÁGINAS DE CARRINHO E CHECKOUT ---
 // Componentes relacionados ao carrinho de compras e processo de checkout
@@ -62,6 +63,8 @@ function App() {
         <Route path="/esqueci-minha-senha" element={<RememberPassword />} />
         <Route path="/trocar-senha" element={<ChangePassword />} />
         <Route path="/kits" element={<Kits />} />
+        <Route path="/ofertas" element={<Ofertas />} />
+
 
 
         {/* Rotas de Políticas e Termos */}
