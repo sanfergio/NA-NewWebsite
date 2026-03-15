@@ -68,7 +68,7 @@ export default function TermosUso() {
                 <header className={styles.header}>
                     <div className={styles.brand}>
                         <img
-                            src="https://newandrews.com.br/image-andrews/logo_three.png"
+                            src="https://images.newandrews.com.br/image-andrews/logo_three.png"
                             alt="New Andrew's - logo"
                         />
                         <div>

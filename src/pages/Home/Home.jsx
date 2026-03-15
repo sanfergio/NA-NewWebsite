@@ -34,7 +34,7 @@ function Home() {
                 {/* Seção da marca */}
                 <section className={styles.brandSection} aria-label="Apresentação da marca BrasMérica">
                     <h1 className={styles.brandTitle} title="BrasMérica Moto Peças">
-                        <img src="https://newandrews.com.br/image-andrews/logo2_icon.png" alt="" />
+                        <img src="https://images.newandrews.com.br/image-andrews/logo2_icon.png" alt="" />
                         <span className={styles.brandPartGreen}>NEW<span className={styles.brandPartGradient}>ANDREW'S</span></span>
                     </h1>
 

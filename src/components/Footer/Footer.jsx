@@ -11,7 +11,7 @@ export default function Footer() {
 
       <div className={styles.newsletter}>
         <img
-          src="https://newandrews.com.br/image-andrews/logo_three.png"
+          src="https://images.newandrews.com.br/image-andrews/logo_three.png"
           alt="Logo do rodapé"
           className={styles.newsletterLogo}
         />

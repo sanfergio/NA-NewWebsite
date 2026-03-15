@@ -48,7 +48,7 @@ const Loading = () => {
       {/* Logo */}
       {showLogo && (
         <img
-          src="https://newandrews.com.br/image-andrews/logo_five.png"
+          src="https://images.newandrews.com.br/image-andrews/logo_five.png"
           alt="Logo"
           style={{
             width: "300px",

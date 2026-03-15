@@ -114,7 +114,7 @@ const carouselCss = `
 // ==========================
 
 const carouselImagesDesktop = [
-    { src: "https://newandrews.com.br/image-andrews/banner_kit_homem.jpg", href: "#", alt: "" },
+    { src: "https://images.newandrews.com.br/image-andrews/banner_kit_homem.jpg", href: "#", alt: "" },
 ];
 
 const carouselImagesMobile = [
