@@ -39,7 +39,7 @@ function StoreLocation() {
       <div className={styles.visitSection}>
         <h2 className={styles.visitTitle}>Venha nos visitar!</h2>
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.72970259827!2d-42.75578629999999!3d-18.541112899999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xae3da91ea54895%3A0xbbbd3451c6c678c2!2sBrasmerica%20Motope%C3%A7as!5e0!3m2!1spt-BR!2sbr!4v1761235989067!5m2!1spt-BR!2sbr"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.72970259827!2d-42.75578629999999!3d-18.541112899999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xae3da91ea54895%3A0xbbbd3451c6c678c2!2sNewAndrews%20Motope%C3%A7as!5e0!3m2!1spt-BR!2sbr!4v1761235989067!5m2!1spt-BR!2sbr"
           className={styles.mapPlaceholder}
           allowFullScreen=""
           loading="lazy"

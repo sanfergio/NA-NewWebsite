@@ -20,7 +20,7 @@ function Header() {
             <a href="./">
               <img
                 src="https://images.newandrews.com.br/image-andrews/logo_five.png"
-                alt="Logo Brasmerica"
+                alt="Logo NewAndrews"
               />
             </a>
 
