@@ -43,7 +43,7 @@ export default function Footer() {
             <div className={styles.footerContact}>
               <p><Phone size={18} color="#000000" /> (21) 97207-4398</p>
               <p><Clock size={18} color="#000000" /> Segunda a Sexta-feira das <br /> 09:00 às 18:00 </p>
-              <p><Mail size={18} color="#000000" /> atendimento@newandrews.com.br </p>
+              <p><Mail size={18} color="#000000" /> produtosnewandrews@gmail.com </p>
             </div>
           </div>
 
