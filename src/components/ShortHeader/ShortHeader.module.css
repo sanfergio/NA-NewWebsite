@@ -5,10 +5,9 @@
 
 /* WRAPPER AGORA USANDO STICKY */
 .headerWrapper {
-  position: sticky;
   top: 0;
   z-index: 1000;
-  width: 100%;
+  width: 100vw;
   background-color: white;
 
   .menu-overlay {

@@ -491,10 +491,10 @@ export default function CheckoutForm() {
       params.append("payment", tipo);
 
       const baseURL = tipo === "PIX"
-        ? "https://newandrews.com.br/paymentVindi/Teste/pix-payment/?"
-        : "https://newandrews.com.br/paymentVindi/Teste/card-payment/?";
+        ? window.location.origin + "/pix-payment"
+        : window.location.origin + "/card-payment";
 
-      return baseURL + params.toString();
+      return baseURL + "?" + params.toString();
     };
 
     const handlePaymentClick = (tipo) => {
@@ -757,7 +757,7 @@ export default function CheckoutForm() {
       </div>
 
       <PaymentModal />
-      <Footer />
+
     </>
   );
 }
