@@ -32,6 +32,8 @@ import Objetivos from './pages/Objetivos/ProductsFilter.jsx';
 import CartProducts from './pages/CartProducts/CartProducts.jsx'
 import CheckoutForm from './pages/CheckoutForm/CheckoutForm.jsx'
 import ConfirmPayment from './pages/ConfirmPayment.jsx'
+import PixPaymentPage from './pages/PixPayment/PixPaymentPage.jsx'
+import CardPaymentPage from './pages/CardPayment/CardPaymentPage.jsx';
 
 // --- PÁGINAS INSTITUCIONAIS (Políticas, Termos, etc.) ---
 import TermosUso from './pages/TermosUso/TermosUso.jsx';
@@ -81,6 +83,8 @@ function App() {
         <Route path='/compra-confirmada' element={<ConfirmPayment />} />
         <Route path="/carrinho" element={<CartProducts />} />
         <Route path="/checkout" element={<CheckoutForm />} />
+        <Route path="/pix-payment" element={<PixPaymentPage />} />
+        <Route path="/card-payment" element={<CardPaymentPage />} />
 
         {/* Rota "Não Encontrado" (Catch-all) */}
         {/* Deve ser sempre a última rota da lista */}
