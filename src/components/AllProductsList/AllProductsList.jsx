@@ -12,7 +12,7 @@ function AllProductsList() {
     const fetchDisponiveis = async () => {
       const { data, error } = await supabase
         .from("db_na_products")
-        .select("name, disponible")
+        .select("name, disponible, skul, id")
         .eq("disponible", 1);
 
       if (error) {
@@ -21,10 +21,17 @@ function AllProductsList() {
         return;
       }
 
-      // Ordena alfabeticamente pelo nome (A -> Z) e seta o estado
-      const ordenados = (data || []).slice().sort((a, b) =>
+      // 1. Mapeia o array adicionando o 'productUrl' em CADA objeto
+      const produtosComUrl = (data || []).map((p) => ({
+        ...p,
+        productUrl: `produtos?productID=${p.id}&sku=${p.skul || ''}`
+      }));
+
+      // 2. Ordena alfabeticamente pelo nome (A -> Z) e seta o estado
+      const ordenados = produtosComUrl.sort((a, b) =>
         (a.name || "").localeCompare(b.name || "", "pt-BR", { sensitivity: "base" })
       );
+      
       setProdutos(ordenados);
     };
 
@@ -34,15 +41,17 @@ function AllProductsList() {
   return (
     <div className={styles.container}>
       <hr className={styles.divider} />
-      <h5 className={styles.title} style={{color: "#000000"}}> NOSSO CATÁLOGO </h5>
+      <h5 className={styles.title} style={{ color: "#000000" }}> NOSSO CATÁLOGO </h5>
       <ul className={styles.lista}>
-        {produtos.map((produto, index) => (
-          <li key={index} className={styles.item}>
+        {produtos.map((produto) => (
+          /* DICA: Alterei a 'key' do index para o 'produto.id'. É uma boa prática no React! */
+          <li key={produto.id} className={styles.item}>
             <a
               target="_blank"
               rel="noopener noreferrer"
               className={styles.link}
               title={produto.name}
+              href={produto.productUrl}
             >
               {produto.name}
             </a>
