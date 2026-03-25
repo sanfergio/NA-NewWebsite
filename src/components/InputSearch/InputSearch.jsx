@@ -21,7 +21,7 @@ export default function InputSearch() {
       setLoading(true);
       const { data, error } = await supabase
         .from("db_na_products")
-        .select("id, name, mockup_img, varejo_value, disponible")
+        .select("id, name, mockup_img, varejo_value, disponible, skul")
         .eq("disponible", 1); // ✅ busca somente os disponíveis
 
       if (error) {
@@ -88,7 +88,8 @@ export default function InputSearch() {
           {resultados.length > 0 && (
             <div className={styles.resultados}>
               {resultados.map((produto) => (
-                <a
+                <a 
+                  href={"/produtos?productID=" + produto.id}
                   key={produto.id}
                   className={styles.resultadoItem}
                 >
