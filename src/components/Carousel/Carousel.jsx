@@ -114,13 +114,13 @@ const carouselCss = `
 // ==========================
 
 const carouselImagesDesktop = [
-    { src: "https://images.newandrews.com.br/image-andrews/banner_kit_homem.webp", href: "#", alt: "" },
-    { src: "https://images.newandrews.com.br/image-andrews/banner_kit_mulher.webp", href: "#", alt: "" }
+    { src: "https://images.newandrews.com.br/image-andrews/banner_kit_homem.webp", href: "/produtos?productID=130&sku=PRODUCTNA76", alt: "" },
+    { src: "https://images.newandrews.com.br/image-andrews/banner_kit_mulher.webp", href: "/produtos?productID=9&sku=PRODUCTNA77", alt: "" }
 ];
 
 const carouselImagesMobile = [
-    { src: "https://www.newandrews.com.br/image-andrews/kit-homem.webp", href: "#", alt: "" },
-    { src: "https://www.newandrews.com.br/image-andrews/kit-mulher.webp", href: "#", alt: "" },
+    { src: "https://www.newandrews.com.br/image-andrews/kit-homem.webp", href: "/produtos?productID=130&sku=PRODUCTNA76", alt: "" },
+    { src: "https://www.newandrews.com.br/image-andrews/kit-mulher.webp", href: "/produtos?productID=9&sku=PRODUCTNA77", alt: "" },
 ];
 
 // ==========================
