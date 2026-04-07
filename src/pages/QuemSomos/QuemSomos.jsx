@@ -151,7 +151,7 @@ export default function QuemSomos() {
 
               <div className={styles.credRow}>
                 <div className={styles.credLeft}>Contato</div>
-                <div className={styles.credRight}>+55 (21) 97207-4398 • produtosnewandrews@gmail.com</div>
+                <div className={styles.credRight}>+55 (21) 99913-5401 • produtosnewandrews@gmail.com</div>
               </div>
 
               <div className={styles.credRow}>
@@ -240,7 +240,7 @@ export default function QuemSomos() {
             <div className={styles.flexRow} style={{ marginTop: "12px" }}>
               <div className={styles.contactItem}>
                 <strong>Telefone</strong>
-                <div className={styles.muted}>+55 (21) 97207-4398</div>
+                <div className={styles.muted}>+55 (21) 99913-5401</div>
               </div>
 
               <div className={styles.contactItem}>
