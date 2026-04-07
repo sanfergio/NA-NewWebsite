@@ -119,8 +119,8 @@ const carouselImagesDesktop = [
 ];
 
 const carouselImagesMobile = [
-    { src: "https://www.images.newandrews.com.br/image-andrews/kit-homem.webp", href: "/produtos?productID=130&sku=PRODUCTNA76", alt: "" },
-    { src: "https://www.images.newandrews.com.br/image-andrews/kit-mulher.webp", href: "/produtos?productID=9&sku=PRODUCTNA77", alt: "" },
+    { src: "https://images.newandrews.com.br/image-andrews/kit-homem.webp", href: "/produtos?productID=130&sku=PRODUCTNA76", alt: "" },
+    { src: "https://images.newandrews.com.br/image-andrews/kit-mulher.webp", href: "/produtos?productID=9&sku=PRODUCTNA77", alt: "" },
 ];
 
 // ==========================
